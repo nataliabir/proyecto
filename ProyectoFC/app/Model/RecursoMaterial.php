@@ -4,8 +4,8 @@ class RecursoMaterial extends AppModel {
 	var $validate = array('descripcion' => array('rule' =>'notEmpty'),
 			'frecuencia' => array('rule' => 'notEmpty'),
 			'costo_total' => array('rule' => 'notEmpty'),
-			'tipo' => array('rule' => 'notEmpty')
-			'plan_id' => array('rule' => 'notEmpty')
+			'tipo' => array('rule' => 'notEmpty'),
+			'plan_id' => array('rule' => 'notEmpty'),
 			'rubro_id' => array('rule' => 'notEmpty'));	
 	
 	// RELACION RECURSOMATERIAL:PLAN 1:n

@@ -11,18 +11,7 @@ class Retencion extends AppModel {
 	
 	
 	
-	id
-	canon_inst
-	canon_inst_monto
-	fondo_reserva
-	fondo_reserva_monto
-	ente_ejecutor
-	ente_ejecutor_monto
-	grab_ope
-	grab_fecha
-	modif_ope
-	modif_fecha
-	proyecto_id
+
 	
 	// RELACION RETENCION:PROYECTO 1:1
 	var $hasOne = array(

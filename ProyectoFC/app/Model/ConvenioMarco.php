@@ -5,7 +5,7 @@ class ConvenioMarco extends AppModel {
     		'fecha_creacion' => array('rule' => 'notEmpty'), 
     		'objetivo' => array('rule' => 'notEmpty'),
     		'estado' => array('rule' => 'notEmpty'),
-    		'comitente_id' => array('rule' => 'notEmpty'),
+    		'comitente_id' => array('rule' => 'notEmpty'));
   		       
     // RELACION CONVENIOMARCO:COMITENTE 1:1 
     
