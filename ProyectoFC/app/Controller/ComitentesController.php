@@ -1,4 +1,8 @@
 <?php
+App::import('Model', 'Provincia');
+App::import('Model', 'CategoriaIva');
+App::import('Model', 'TipoComitente');
+App::import('Model', 'Ciudad');
 class ComitentesController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,6 +32,37 @@ class ComitentesController extends AppController {
 				$this->Session->setFlash('El Comitente no pudo ser grabado');
 			}
 		}
+		else
+		{
+			//Combo de Provincias
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+			
+			//Combo de Categoria de IVA
+			$categoriaiva = new CategoriaIva();
+			$categoriaivas = $categoriaiva->find('list', array(
+					'fields' => array('CategoriaIva.id', 'CategoriaIva.descripcion')
+			));
+			$this->set('categoriaivas', $categoriaivas);
+				
+			//Combo de Tipo Comitente
+			$tipocomitente = new TipoComitente();
+			$tipocomitentes = $tipocomitente->find('list', array(
+					'fields' => array('TipoComitente.id', 'TipoComitente.nombre')
+			));
+			$this->set('tipocomitentes', $tipocomitentes);
+			
+			//Combo de Ciudad
+			$ciudad = new Ciudad();
+			$ciudads = $ciudad->find('list', array(
+					'fields' => array('Ciudad.id', 'Ciudad.nombre')
+			));
+			$this->set('ciudads', $ciudads);
+				
+		}
 	}
 	
 	public function edit($id = null) {
@@ -48,6 +83,37 @@ class ComitentesController extends AppController {
 			} else {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
+		}
+		else
+		{
+			//Combo de Provincias
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+				
+			//Combo de Categoria de IVA
+			$categoriaiva = new CategoriaIva();
+			$categoriaivas = $categoriaiva->find('list', array(
+					'fields' => array('CategoriaIva.id', 'CategoriaIva.descripcion')
+			));
+			$this->set('categoriaivas', $categoriaivas);
+		
+			//Combo de Tipo Comitente
+			$tipocomitente = new TipoComitente();
+			$tipocomitentes = $tipocomitente->find('list', array(
+					'fields' => array('TipoComitente.id', 'TipoComitente.nombre')
+			));
+			$this->set('tipocomitentes', $tipocomitentes);
+				
+			//Combo de Ciudad
+			$ciudad = new Ciudad();
+			$ciudads = $ciudad->find('list', array(
+					'fields' => array('Ciudad.id', 'Ciudad.nombre')
+			));
+			$this->set('ciudads', $ciudads);
+		
 		}
 	
 		if (!$this->request->data) {

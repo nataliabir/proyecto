@@ -41,16 +41,16 @@
 		<?php echo $this->Html->link($comitente['Comitente']['telefono'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['ciudad_id'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
+		<?php echo $this->Html->link($comitente['Ciudad']['nombre'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
 		</td>
 		<td>
 		<?php echo $this->Html->link($comitente['Comitente']['provincia_id'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['categoria_iva_id'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
+		<?php echo $this->Html->link($comitente['CategoriaIva']['descripcion'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['tipo_comitente_id'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
+		<?php echo $this->Html->link($comitente['TipoComitente']['nombre'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
