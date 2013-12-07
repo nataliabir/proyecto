@@ -1,4 +1,10 @@
 <?php
+App::import('Model', 'Departamento');
+App::import('Model', 'Grupo');
+App::import('Model', 'Comitente');
+App::import('Model', 'Proyecto');
+App::import('Model', 'EntidadFirmante');
+
 class ConvenioEspecificosController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +34,47 @@ class ConvenioEspecificosController extends AppController {
 				$this->Session->setFlash('El Convenio Especifico no pudo ser grabado');
 			}
 		}
-	}
+else
+		{
+			//Combo de Departamento
+			$departamento = new Departamento();
+			$departamentos = $departamento->find('list', array(
+					'fields' => array('Departamento.id', 'Departamento.nombre')
+			));
+			$this->set('departamentos', $departamentos);
+			
+			//Combo de Grupo
+			$grupo = new Grupo();
+			$grupos = $grupo->find('list', array(
+					'fields' => array('Grupo.id', 'Grupo.nombre')
+			));
+			$this->set('grupos', $grupos);
+				
+			//Combo Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
+			
+			//Combo de Proyecto
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+				
+			//Combo de Entidad Firmnate
+			$entidadfirmante = new EntidadFirmante();
+			$entidadfirmantes = $entidadfirmante->find('list', array(
+					'fields' => array('EntidadFirmante.id', 'EntidadFirmante.nombre')
+			));
+			$this->set('entidadfirmantes', $entidadfirmantes);
+				
+		
+		
+		}
+}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,7 +95,45 @@ class ConvenioEspecificosController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+	else
+		{
+			//Combo de Departamento
+			$departamento = new Departamento();
+			$departamentos = $departamento->find('list', array(
+					'fields' => array('Departamento.id', 'Departamento.nombre')
+			));
+			$this->set('departamentos', $departamentos);
+			
+			//Combo de Grupo
+			$grupo = new Grupo();
+			$grupos = $grupo->find('list', array(
+					'fields' => array('Grupo.id', 'Grupo.nombre')
+			));
+			$this->set('grupos', $grupos);
+				
+			//Combo Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
+			
+			//Combo de Proyecto
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+			
+			//Combo de Entidad Firmnate
+			$entidadfirmante = new EntidadFirmante();
+			$entidadfirmantes = $entidadfirmante->find('list', array(
+					'fields' => array('EntidadFirmante.id', 'EntidadFirmante.nombre')
+			));
+			$this->set('entidadfirmantes', $entidadfirmantes);
+
+	}
+
 		if (!$this->request->data) {
 			$this->request->data = $convenioespecifico;
 		}

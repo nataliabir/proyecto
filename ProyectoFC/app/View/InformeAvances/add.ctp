@@ -9,6 +9,10 @@
 	echo $this->Form->input('periodo_reporte_fin');
 	echo $this->Form->input('desvio');
 	echo $this->Form->input('fecha_reporte');
-	echo $this->Form->input('proyecto_id');
+	echo $this->Form->input('proyecto_id', array(
+    'type'    => 'select',
+    'options' => $proyectos,
+    'empty'   => false
+	));
 	echo $this->Form->end('Guardar Informe de Avance');
 ?>

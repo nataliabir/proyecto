@@ -37,7 +37,7 @@
 		<?php echo $this->Html->link($actividad['Actividad']['hitos'], array('controller' => 'actividads', 'action' => 'view', $actividad['Actividad']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($actividad['Actividad']['etapa_id'], array('controller' => 'actividads', 'action' => 'view', $actividad['Actividad']['id'])); ?>
+		<?php echo $this->Html->link($actividad['Etapa']['nombre'], array('controller' => 'actividads', 'action' => 'view', $actividad['Actividad']['id'])); ?>
 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',

@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'Comitente');
+App::import('Model', 'EntidadFirmante');
+
 class ConvenioMarcosController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +31,23 @@ class ConvenioMarcosController extends AppController {
 				$this->Session->setFlash('El Convenio Marco no pudo ser grabado');
 			}
 		}
-	}
+else
+		{
+			//Combo de Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
+			
+			//Combo de Entidad Firmnate
+			$entidadfirmante = new EntidadFirmante();
+			$entidadfirmantes = $entidadfirmante->find('list', array(
+					'fields' => array('EntidadFirmante.id', 'EntidadFirmante.nombre')
+			));
+			$this->set('entidadfirmantes', $entidadfirmantes);
+
+	}}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,7 +68,24 @@ class ConvenioMarcosController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+else
+		{
+			//Combo de Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
+			//Combo de Entidad Firmnate
+			$entidadfirmante = new EntidadFirmante();
+			$entidadfirmantes = $entidadfirmante->find('list', array(
+					'fields' => array('EntidadFirmante.id', 'EntidadFirmante.nombre')
+			));
+			$this->set('entidadfirmantes', $entidadfirmantes);	
+
+}
+
+
 		if (!$this->request->data) {
 			$this->request->data = $conveniomarco;
 		}

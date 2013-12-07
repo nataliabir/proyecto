@@ -1,4 +1,8 @@
 <?php
+App::import('Model', 'TipoFactura');
+App::import('Model', 'Comitente');
+
+
 class FacturaEmitidasController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,8 +32,26 @@ class FacturaEmitidasController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
-	}
+else
+		{
+			//Combo de Tipo Factura
+			$tipofactura = new TipoFactura();
+			$tipofacturas = $tipofactura->find('list', array(
+					'fields' => array('TipoFactura.id', 'TipoFactura.nombre')
+			));
+			$this->set('tipofacturas', $tipofacturas);
+			
+			//Combo de Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
 	
+
+
+	}
+		}
 	public function edit($id = null) {
 		if (!$id) {
 			throw new NotFoundException(__('Dato no encontrado'));
@@ -49,6 +71,26 @@ class FacturaEmitidasController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+		{
+			//Combo de Tipo Factura
+			$tipofactura = new TipoFactura();
+			$tipofacturas = $tipofactura->find('list', array(
+					'fields' => array('TipoFactura.id', 'TipoFactura.nombre')
+			));
+			$this->set('tipofacturas', $tipofacturas);
+			
+			//Combo de Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
+	
+
+
+	}
+
 	
 		if (!$this->request->data) {
 			$this->request->data = $facturaemitida;

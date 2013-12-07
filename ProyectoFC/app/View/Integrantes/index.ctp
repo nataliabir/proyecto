@@ -29,8 +29,8 @@
 		<td><?php echo $integrante['Integrante']['fecha_ini']; ?></td>
 		<td><?php echo $integrante['Integrante']['fecha_fin']; ?></td>
 		<td><?php echo $integrante['Integrante']['categoria_persona_id']; ?></td>
-		<td><?php echo $integrante['Integrante']['rol_id']; ?></td>
-		<td><?php echo $integrante['Integrante']['tipo_pago_id']; ?></td>
+		<td><?php echo $integrante['Rol']['descripcion']; ?></td>
+		<td><?php echo $integrante['TipoPago']['descripcion']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $integrante['Integrante']['id']),

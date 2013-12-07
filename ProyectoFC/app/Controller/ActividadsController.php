@@ -1,4 +1,6 @@
 <?php
+App::import('Model', 'Etapa');
+
 class ActividadsController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -18,17 +20,29 @@ class ActividadsController extends AppController {
 			$this->set('actividad', $actividad);
 	}
 	
-	public function add() {
+public function add() {
 		if ($this->request->is('post')) {
 			$this->Actividad->create();
 			if ($this->Actividad->save($this->request->data)) {
-				$this->Session->setFlash('La Actividad se grabó correctamente');
+				$this->Session->setFlash('la Actividad se grabó correctamente');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash('La Actividad no pudo ser grabada');
+				$this->Session->setFlash('La Actividad no pudo ser grabado');
 			}
 		}
+	else
+	{	
+	//Combo de Etapa
+	$etapa = new Etapa();
+	$etapas = $etapa->find('list', array(
+			'fields' => array('Etapa.id', 'Etapa.nombre')
+	));
+	$this->set('etapas', $etapas);
+	
+	
 	}
+	}
+	
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,6 +63,19 @@ class ActividadsController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+	{	
+	//Combo de Etapa
+	$etapa = new Etapa();
+	$etapas = $etapa->find('list', array(
+			'fields' => array('Etapa.id', 'Etapa.nombre')
+	));
+	$this->set('etapas', $etapas);
+	
+	
+	
+	}
+
 	
 		if (!$this->request->data) {
 			$this->request->data = $actividad;

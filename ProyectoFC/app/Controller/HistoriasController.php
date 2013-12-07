@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'Grupo');
+App::import('Model', 'Proyecto');
+
 class HistoriasController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,8 +31,18 @@ class HistoriasController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
+else
+	{	
+	//Combo de Proyectos
+	$proyecto = new Proyecto();
+	$proyectos = $proyecto->find('list', array(
+			'fields' => array('Proyecto.id', 'Proyecto.nombre')
+	));
+	$this->set('proyectos', $proyectos);
+
+
 	}
-	
+	}
 	public function edit($id = null) {
 		if (!$id) {
 			throw new NotFoundException(__('Dato no encontrado'));
@@ -49,7 +62,17 @@ class HistoriasController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+else
+	{	
+	//Combo de Proyectos
+	$proyecto = new Proyecto();
+	$proyectos = $proyecto->find('list', array(
+			'fields' => array('Proyecto.id', 'Proyecto.nombre')
+	));
+	$this->set('proyectos', $proyectos);
+
+
+}	
 		if (!$this->request->data) {
 			$this->request->data = $historia;
 		}

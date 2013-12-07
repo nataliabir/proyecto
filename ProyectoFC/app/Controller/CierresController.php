@@ -1,4 +1,8 @@
 <?php
+App::import('Model', 'Proyecto');
+App::import('Model', 'MotivoCierre');
+
+
 class CierresController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +32,25 @@ class CierresController extends AppController {
 				$this->Session->setFlash('El cierre no pudo ser grabado');
 			}
 		}
-	}
+else
+		{
+			//Combo de Proyectos
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+	//Combo de Motivo de cierre
+			$motivocierre = new MotivoCierre();
+			$motivocierres = $motivocierre->find('list', array(
+					'fields' => array('MotivoCierre.id', 'MotivoCierre.nombre')
+			));
+			$this->set('motivocierres', $motivocierres);
+
+	
+
+}
+}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,7 +71,24 @@ class CierresController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+	else
+		{
+			//Combo de Proyectos
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+//Combo de Motivo de cierre
+			$motivocierre = new MotivoCierre();
+			$motivocierres = $motivocierre->find('list', array(
+					'fields' => array('MotivoCierre.id', 'MotivoCierre.nombre')
+			));
+			$this->set('motivocierres', $motivocierres);
+
+
+
+}
 		if (!$this->request->data) {
 			$this->request->data = $cierre;
 		}

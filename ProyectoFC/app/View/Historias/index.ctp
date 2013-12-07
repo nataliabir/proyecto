@@ -18,7 +18,7 @@
 		<?php echo $this->Html->link($historia['Historia']['nombre'], array('controller' => 'historias', 'action' => 'view', $historia['Historia']['id'])); ?>
 		</td>
 		<td><?php echo $historia['Historia']['descripcion']; ?></td>
-		<td><?php echo $historia['Historia']['proyecto_id']; ?></td>
+		<td><?php echo $historia['Proyecto']['nombre']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $historia['Historia']['id']),

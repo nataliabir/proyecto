@@ -25,7 +25,7 @@
 		<?php echo $this->Html->link($archivo['Archivo']['tipo'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($archivo['Archivo']['proyecto_id'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
+		<?php echo $this->Html->link($archivo['Proyecto']['nombre'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
 		</td>
 		<td>
 		

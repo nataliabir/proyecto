@@ -1,4 +1,10 @@
 <?php
+App::import('Model', 'Persona');
+App::import('Model', 'CategoriaPersona');
+App::import('Model', 'Rol');
+App::import('Model', 'Integrante');	
+App::import('Model', 'TipoPago');
+
 class IntegrantesController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,8 +34,41 @@ class IntegrantesController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
+else
+	{	
+	//Combo de Persona
+	$persona = new Persona();
+	$personas = $persona->find('list', array(
+			'fields' => array('Persona.id', 'Persona.nombre', 'Persona.apellido')
+	));
+	$this->set('personas', $personas);
+	
+	//Combo de Categoria
+	$categoriapersona = new CategoriaPersona();
+	$categoriapersonas = $categoriapersona->find('list', array(
+			'fields' => array('CategoriaPersona.id', 'CategoriaPersona.nombre')
+	));
+	$this->set('categoriapersonas', $categoriapersonas);
+	
+	//Combo de Rol
+	$rol = new Rol();
+	$rols = $rol->find('list', array(
+			'fields' => array('Rol.id', 'Rol.descripcion')
+	));
+	$this->set('rols', $rols);
+	
+	//Combo de TipoPago
+	$tipopago = new TipoPago();
+	$tipopagos = $tipopago->find('list', array(
+			'fields' => array('TipoPago.id', 'TipoPago.descripcion')
+	));
+	$this->set('tipopagos', $tipopagos);
+	
+	
+	}
 	}
 	
+
 	public function edit($id = null) {
 		if (!$id) {
 			throw new NotFoundException(__('Dato no encontrado'));
@@ -49,6 +88,39 @@ class IntegrantesController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+	{	
+	
+	
+	
+	//Combo de Persona
+	$persona = new Persona();
+	$personas = $persona->find('list', array(
+			'fields' => array('Persona.id', 'Persona.nombre', 'Persona.apellido')
+	));
+	$this->set('personas', $personas);
+	
+	//Combo de Categoria
+	$categoriapersona = new CategoriaPersona();
+	$categoriapersonas = $categoriapersona->find('list', array(
+			'fields' => array('CategoriaPersona.id', 'CategoriaPersona.nombre')
+	));
+	$this->set('categoriapersonas', $categoriapersonas);
+	
+	//Combo de Rol
+	$rol = new Rol();
+	$rols = $rol->find('list', array(
+			'fields' => array('Rol.id', 'Rol.descripcion')
+	));
+	$this->set('rols', $rols);
+	
+	//Combo de TipoPago
+	$tipopago = new TipoPago();
+	$tipopagos = $tipopago->find('list', array(
+			'fields' => array('TipoPago.id', 'TipoPago.descripcion')
+	));
+	$this->set('tipopagos', $tipopagos);
+	}
 	
 		if (!$this->request->data) {
 			$this->request->data = $integrante;

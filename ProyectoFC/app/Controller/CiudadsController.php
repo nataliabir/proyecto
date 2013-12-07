@@ -1,4 +1,6 @@
 <?php
+App::import('Model', 'Provincia');
+
 class CiudadsController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +30,17 @@ class CiudadsController extends AppController {
 				$this->Session->setFlash('La Ciudad no pudo ser grabado');
 			}
 		}
+else
+		{
+			//Combo de Provincias
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+
 	}
+}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,6 +61,15 @@ class CiudadsController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+		{
+			//Combo de Provincias
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+}
 	
 		if (!$this->request->data) {
 			$this->request->data = $ciudad;

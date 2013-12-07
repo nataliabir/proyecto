@@ -1,4 +1,8 @@
 <?php
+App::import('Model', 'Rubro');
+App::import('Model', 'FacturaRecibida');
+
+
 class FacRecDetallesController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +32,26 @@ class FacRecDetallesController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
-	}
+	else
+		{
+				//Combo de Rubro
+			$rubro = new Rubro();
+			$rubros = $rubro->find('list', array(
+					'fields' => array('Rubro.id', 'Rubro.nombre')
+			));
+			$this->set('rubros', $rubros);
+			
+		//Combo de Factura Emitida
+			$facturarecibida = new FacturaRecibida();
+			$facturarecibidas = $facturarecibida->find('list', array(
+					'fields' => array('FacturaRecibida.id', 'FacturaRecibida.nro_factura')
+			));
+			$this->set('facturarecibidas', $facturarecibidas);
+
+
+}}
+	
+
 	
 public function edit($id = null) {
 		if (!$id) {
@@ -49,12 +72,29 @@ public function edit($id = null) {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+Else
+{
+//Combo de Rubro
+			$rubro = new Rubro();
+			$rubros = $rubro->find('list', array(
+					'fields' => array('Rubro.id', 'Rubro.nombre')
+			));
+			$this->set('rubros', $rubros);
+			
+				//Combo de Factura Emitida
+			$facturarecibida = new FacturaRecibida();
+			$facturarecibidas = $facturarecibida->find('list', array(
+					'fields' => array('FacturaRecibida.id', 'FacturaRecibida.nro_factura')
+			));
+			$this->set('facturarecibidas', $facturarecibidas);
+			
+}
+
+
 		if (!$this->request->data) {
 			$this->request->data = $facrecdetalle;
 		}
 	}
-	
 	public function delete($id) {
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();

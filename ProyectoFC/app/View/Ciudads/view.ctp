@@ -3,4 +3,4 @@
 <h1>Ciudad</h1>
 <p><?php echo h($ciudad['Ciudad']['nombre']); ?></p>
 <p><?php echo h($ciudad['Ciudad']['cp']); ?></p>
-<p><?php echo h($ciudad['Ciudad']['provincia_id']); ?></p>
+<p><?php echo h($ciudad['Provincia']['nombre']); ?></p>

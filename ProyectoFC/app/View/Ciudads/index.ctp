@@ -20,7 +20,7 @@
 		<?php echo $this->Html->link($ciudad['Ciudad']['cp'], array('controller' => 'ciudads', 'action' => 'view', $ciudad['Ciudad']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($ciudad['Ciudad']['provincia_id'], array('controller' => 'ciudads', 'action' => 'view', $ciudad['Ciudad']['id'])); ?>
+		<?php echo $this->Html->link($ciudad['Provincia']['nombre'], array('controller' => 'ciudads', 'action' => 'view', $ciudad['Ciudad']['id'])); ?>
 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',

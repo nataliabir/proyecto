@@ -20,6 +20,44 @@
 	echo $this->Form->input('respons_utn');
 	echo $this->Form->input('monto');
 	echo $this->Form->input('estado');
+	
+	echo $this->Form->input('proyecto_id', array(
+    'type'    => 'select',
+    'options' => $proyectos,
+    'empty'   => false
+	));
+
+	echo $this->Form->input('convenio_marco_id', array(
+    'type'    => 'select',
+    'options' => $conveniomarcos,
+    'empty'   => false
+	));
+	
+	echo $this->Form->input('departamento_id', array(
+    'type'    => 'select',
+    'options' => $departamentos,
+    'empty'   => false
+	));
+
+
+	echo $this->Form->input('grupo_id', array(
+    'type'    => 'select',
+    'options' => $grupos,
+    'empty'   => false
+	));
+
+	echo $this->Form->input('comitente_id', array(
+    'type'    => 'select',
+    'options' => $comitentes,
+    'empty'   => false
+	));
+	
+	echo $this->Form->input('entidad_firmante_id', array(
+    'type'    => 'select',
+    'options' => $entidadfirmantes,
+    'empty'   => false
+	));
+	
  	echo $this->Form->input('id', array('type' => 'hidden'));
     echo $this->Form->end('Guardar Acta Acuerdo');
     

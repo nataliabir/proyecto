@@ -1,4 +1,5 @@
 <?php
+App::import('Model', 'Proyecto');
 class EncuestasController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +29,17 @@ class EncuestasController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
-	}
+else
+		{
+			//Combo de Proyecto
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+	
+
+}}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,7 +60,15 @@ class EncuestasController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+	else
+		{
+			//Combo de Proyecto
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+		}
 		if (!$this->request->data) {
 			$this->request->data = $encuesta;
 		}

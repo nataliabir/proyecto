@@ -19,11 +19,38 @@
 	echo $this->Form->input('observaciones');
 	echo $this->Form->input('monto');
 	echo $this->Form->input('estado');
-	echo $this->Form->input('departamento_id');
-	echo $this->Form->input('grupo_id');
-	echo $this->Form->input('comitente_id');
-	echo $this->Form->input('proyecto_id');
-	echo $this->Form->input('entidad_firmante_id');
+     echo $this->Form->input('departamento_id', array(
+    'type'    => 'select',
+    'options' => $departamentos,
+    'empty'   => false
+	));
+
+
+     echo $this->Form->input('grupo_id', array(
+    'type'    => 'select',
+    'options' => $grupos,
+    'empty'   => false
+	));
+
+     echo $this->Form->input('comitente_id', array(
+    'type'    => 'select',
+    'options' => $comitentes,
+    'empty'   => false
+	));
+
+     echo $this->Form->input('proyecto_id', array(
+    'type'    => 'select',
+    'options' => $proyectos,
+    'empty'   => false
+	));
+
+	
+     echo $this->Form->input('entidad_firmante_id', array(
+    'type'    => 'select',
+    'options' => $entidadfirmantes,
+    'empty'   => false
+	));
+
 	echo $this->Form->end('Guardar Convenio Especifico');
 ?>
 	 

@@ -23,9 +23,11 @@
 		<td> <?php echo $this->Html->link($contacto['Contacto']['domicilio'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> 	</td>
 		<td> <?php echo $this->Html->link($contacto['Contacto']['telefono'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
 		<td> <?php echo $this->Html->link($contacto['Contacto']['observaciones'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['comitente_id'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['ciudad_id'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['provincia_id'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
+		<td>
+		<?php echo $this->Html->link($comitente['Comitente']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?>
+		</td>
+		<td> <?php echo $this->Html->link($contacto['Ciudad']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
+		<td> <?php echo $this->Html->link($contacto['Provincia']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
 		
 		<td>
 		<?php echo $this->Form->postLink('Delete',

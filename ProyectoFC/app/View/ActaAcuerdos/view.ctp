@@ -19,4 +19,9 @@
 <p><?php echo h($actaacuerdo['ActaAcuerdo']['respons_utn']); ?></p>
 <p><?php echo h($actaacuerdo['ActaAcuerdo']['monto']); ?></p>
 <p><?php echo h($actaacuerdo['ActaAcuerdo']['estado']); ?></p>
-	
+<p><?php echo h($actaacuerdo['Proyecto']['nombre']); ?></p>
+<p><?php echo h($actaacuerdo['ConvenioMarco']['fecha_creacion']); ?></p>
+<p><?php echo h($actaacuerdo['Departamento]['nombre']); ?></p>
+<p><?php echo h($actaacuerdo['Grupo']['nombre']); ?></p>
+<p><?php echo h($actaacuerdo['Comitente']['nombre']); ?></p>
+<p><?php echo h($actaacuerdo['EntidadFirmante']['nombre']); ?></p>

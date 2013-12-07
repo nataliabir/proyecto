@@ -24,7 +24,7 @@
 		<td><?php echo $informeavance['InformeAvance']['periodo_reporte_fin']; ?></td>
 		<td><?php echo $informeavance['InformeAvance']['desvio']; ?></td>
 		<td><?php echo $informeavance['InformeAvance']['fecha_reporte']; ?></td>
-		<td><?php echo $informeavance['InformeAvance']['proyecto_id']; ?></td>
+		<td><?php echo $informeavance['Proyecto']['nombre']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $informeavance['InformeAvance']['id']),

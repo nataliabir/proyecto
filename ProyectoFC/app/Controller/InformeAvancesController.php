@@ -1,4 +1,6 @@
 <?php
+App::import('Model', 'Proyecto');
+
 class InformeAvancesController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +30,16 @@ class InformeAvancesController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
-	}
+else
+	{	
+	//Combo de Proyectos
+	$proyecto = new Proyecto();
+	$proyectos = $proyecto->find('list', array(
+			'fields' => array('Proyecto.id', 'Proyecto.nombre')
+	));
+	$this->set('proyectos', $proyectos);
+
+	}}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,12 +60,21 @@ class InformeAvancesController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+	{	
+	//Combo de Proyectos
+	$proyecto = new Proyecto();
+	$proyectos = $proyecto->find('list', array(
+			'fields' => array('Proyecto.id', 'Proyecto.nombre')
+	));
+	$this->set('proyectos', $proyectos);
+	}
 	
 		if (!$this->request->data) {
 			$this->request->data = $informeavance;
 		}
-	}
 	
+	}
 	public function delete($id) {
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();

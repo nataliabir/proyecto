@@ -5,6 +5,11 @@
 <?php
 	echo $this->Form->create('Grupo');
 	echo $this->Form->input('nombre');
-	echo $this->Form->input('departamento_id');
+	echo $this->Form->input('departamento_id', array(
+    'type'    => 'select',
+    'options' => $departamentos,
+    'empty'   => false
+	));
+
 	echo $this->Form->end('Guardar Frupo');
 ?>

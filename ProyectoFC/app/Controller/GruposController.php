@@ -1,4 +1,6 @@
 <?php
+App::import('Model', 'Departamento');
+
 class GruposController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +30,21 @@ class GruposController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
+
+	else
+	{	
+	
+	//Combo de Departamento
+	$departamento = new Departamento();
+	$departamentos = $departamento->find('list', array(
+			'fields' => array('Departamento.id', 'Departamento.nombre')
+	));
+	$this->set('departamentos', $departamentos);
+
 	}
+	}
+	
+	
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,7 +65,19 @@ class GruposController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+	{	
 	
+	//Combo de Departamento
+	$departamento = new Departamento();
+	$departamentos = $departamento->find('list', array(
+			'fields' => array('Departamento.id', 'Departamento.nombre')
+	));
+	$this->set('departamentos', $departamentos);
+
+	}
+	
+		
 		if (!$this->request->data) {
 			$this->request->data = $grupo;
 		}

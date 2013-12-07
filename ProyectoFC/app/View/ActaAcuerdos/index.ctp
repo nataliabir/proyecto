@@ -19,10 +19,16 @@
 		<th>Duracion</th>
 		<th>Responsable Comitente</th>
 		<th>Responsable UTN</th>
-        <th>Responsable Monto</th>
-        <th>Responsable Estado</th>
+       		<th>Monto</th>
+                <th>Estado</th>
+                <th>Proyecto</th>
+                <th>Convenio Marco</th>
+                <th>Departamento</th>
+                <th>Grupo</th>
+                <th>Comitente</th>
+                <th>Entidad Firmante</th>
+                
 		<th>Accion</th>
-
 		
 	</tr>
 	<!-- Here is where we loop through our $directors array, printing out post info -->
@@ -46,6 +52,12 @@
 		<td><?php echo $this->Html->link($actaacuerdo['ActaAcuerdo']['respons_utn'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
 		<td><?php echo $this->Html->link($actaacuerdo['ActaAcuerdo']['monto'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
 		<td><?php echo $this->Html->link($actaacuerdo['ActaAcuerdo']['estado'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
+		<td><?php echo $this->Html->link($actaacuerdo['Proyecto']['nombre'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
+		<td><?php echo $this->Html->link($actaacuerdo['ConvenioMarco']['fecha_creacion'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
+		<td><?php echo $this->Html->link($actaacuerdo['Departamento']['nombre'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
+		<td><?php echo $this->Html->link($actaacuerdo['Grupo']['nombre'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
+		<td><?php echo $this->Html->link($actaacuerdo['Comitente']['nombre'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
+		<td><?php echo $this->Html->link($actaacuerdo['EntidadFirmante']['nombre'], array('controller' => 'actaacuerdos', 'action' => 'view', $actaacuerdo['ActaAcuerdo']['id'])); ?></td>
 		<td>
 		
 		<?php echo $this->Form->postLink('Delete',

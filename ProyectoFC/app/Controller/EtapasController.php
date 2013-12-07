@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'Plan');
+
+
 class EtapasController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +31,18 @@ class EtapasController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
-	}
+else
+		{
+			//Combo de Plan
+			$plan = new Plan();
+			$plans = $plan->find('list', array(
+					'fields' => array('Plan.id', 'Plan.fecha_ini_prob')
+			));
+			$this->set('plans', $plans);
+
+
+	}}
+
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,12 +63,22 @@ class EtapasController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+else
+		{
+			//Combo de Plan
+			$plan = new Plan();
+			$plans = $plan->find('list', array(
+					'fields' => array('Plan.id', 'Plan.fecha_ini_prob')
+			));
+			$this->set('plans', $plans);
+
+
+		}
 		if (!$this->request->data) {
 			$this->request->data = $etapa;
-		}
+		
 	}
-	
+	}
 	public function delete($id) {
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();

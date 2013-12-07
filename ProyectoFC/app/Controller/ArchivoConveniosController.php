@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'ActaAcuerdo');
+App::import('Model', 'ConvenioMarco');
+App::import('Model', 'ConvenioEspecifico');
 class ArchivoConveniosController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -25,13 +28,36 @@ class ArchivoConveniosController extends AppController {
 			if ($this->ArchivoConvenio->save($this->request->data)) {
 				$this->Session->setFlash('El Archivo Convenio se grabó correctamente');
 				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash('El Archivo Convenio no pudo ser grabado');
+				} else {
+				$this->Session->setFlash('El Archivo convenio no pudo ser grabado');
 			}
 		}
-	}
+	else
+	{	
+	//Combo de Acta Acuerdo
+	$actaacuerdo = new ActaAcuerdo();
+	$actaacuerdos = $actaacuerdo->find('list', array(
+			'fields' => array('ActaAcuerdo.id', 'ActaAcuerdo.fecha_creacion')
+	));
+	$this->set('actaacuerdos', $actaacuerdos);
 	
-public function edit($id = null) {
+	//Combo de Convenio Marco
+	$conveniomarco = new conveniomarco();
+	$conveniomarcos = $conveniomarco->find('list', array(
+			'fields' => array('ConvenioMarco.id', 'ConvenioMarco.fecha_creacion')
+	));
+	$this->set('conveniomarcos', $conveniomarcos);
+	
+	//Combo de Convenio Especifico
+	$convenioespecifico = new convenioespecifico();
+	$convenioespecificos = $convenioespecifico->find('list', array(
+			'fields' => array('ConvenioEspecifico.id', 'ConvenioEspecifico.fecha_firma')
+	));
+	$this->set('convenioespecificos', $convenioespecificos);
+					
+	}
+	}
+	public function edit($id = null) {
 		if (!$id) {
 			throw new NotFoundException(__('Archivo no encontrado'));
 		}
@@ -50,7 +76,30 @@ public function edit($id = null) {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+	{	
+	//Combo de Acta Acuerdo
+	$actaacuerdo = new ActaAcuerdo();
+	$actaacuerdos = $actaacuerdo->find('list', array(
+			'fields' => array('ActaAcuerdo.id', 'ActaAcuerdo.fecha_creacion')
+	));
+	$this->set('actaacuerdos', $actaacuerdos);
 	
+	//Combo de Convenio Marco
+	$conveniomarco = new conveniomarco();
+	$conveniomarcos = $conveniomarco->find('list', array(
+			'fields' => array('ConvenioMarco.id', 'ConvenioMarco.fecha_creacion')
+	));
+	$this->set('conveniomarcos', $conveniomarcos);
+	
+	//Combo de Convenio Especifico
+	$convenioespecifico = new convenioespecifico();
+	$convenioespecificos = $convenioespecifico->find('list', array(
+			'fields' => array('ConvenioEspecifico.id', 'ConvenioEspecifico.fecha_firma')
+	));
+	$this->set('convenioespecificos', $convenioespecificos);
+
+	}
 		if (!$this->request->data) {
 			$this->request->data = $archivoconvenio;
 		}

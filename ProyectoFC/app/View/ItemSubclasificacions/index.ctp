@@ -17,7 +17,7 @@
 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
-                array('action' => 'delete', $itemsubclasificacion['ItemSubClasificacion']['id']),
+                array('action' => 'delete', $itemsubclasificacion['ItemSubclasificacion']['id']),
                 array('confirm' => 'Desea borrar?'));?>
 		<?php echo $this->Html->link('Editar', array('action' => 'edit', $itemsubclasificacion['ItemSubclasificacion']['id'])); ?>
 	</tr>

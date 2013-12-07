@@ -1,4 +1,6 @@
 <?php
+App::import('Model', 'Integrante');
+
 class DirectorsController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +30,16 @@ class DirectorsController extends AppController {
 				$this->Session->setFlash('Los datos no se pudieron grabar');
 			}
 		}
-	}
+else
+		{
+			//Combo de Integrantes
+			$integrante = new Integrante();
+			$integrantes = $integrante->find('list', array(
+					'fields' => array('Integrante.id', 'Integrante.dedicacion')
+			));
+			$this->set('integrantes', $integrantes);
+
+	}}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,11 +60,20 @@ class DirectorsController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+	else
+		{
+			//Combo de Integrantes
+			$integrante = new Integrante();
+			$integrantes = $integrante->find('list', array(
+					'fields' => array('Integrante.id', 'Integrante.dedicacion')
+			));
+			$this->set('integrantes', $integrantes);
+		}
 		if (!$this->request->data) {
 			$this->request->data = $director;
 		}
-	}
+	
+		}
 	
  	public function delete($id) {
  		if ($this->request->is('get')) {

@@ -6,5 +6,5 @@
 <p><?php echo h($actividad['Actividad']['mes_ini']); ?></p>
 <p><?php echo h($actividad['Actividad']['mes_fin']); ?></p>
 <p><?php echo h($actividad['Actividad']['hitos']); ?></p>
-<p><?php echo h($actividad['Actividad']['etapa_id']); ?></p>
+<p><?php echo h($actividad['Etapa']['nombre']); ?></p>
 

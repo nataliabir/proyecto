@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'Proyecto');
+
+
 class ArchivosController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +31,19 @@ class ArchivosController extends AppController {
 				$this->Session->setFlash('Archivo no pudo ser grabado');
 			}
 		}
-	}
+else
+		{
+			//Combo de Proyectos
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+
+	
+}
+}
+	
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,6 +64,16 @@ class ArchivosController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+else
+		{
+			//Combo de Proyectos
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+
+}
 	
 		if (!$this->request->data) {
 			$this->request->data = $archivo;

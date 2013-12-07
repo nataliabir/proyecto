@@ -1,4 +1,6 @@
 <?php
+App::import('Model', 'InformeAvance');
+
 class DesviosController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +30,16 @@ class DesviosController extends AppController {
 				$this->Session->setFlash('El Desvio no pudo ser grabado');
 			}
 		}
-	}
+else
+		{
+			//Combo de Informe de Avance
+			$informeavance = new InformeAvance();
+			$informeavances = $informeavance->find('list', array(
+					'fields' => array('InformeAvance.id', 'InformeAvance.fecha_fin_etapa')
+			));
+			$this->set('informeavances', $informeavances);
+
+	}}
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,11 +60,22 @@ class DesviosController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+
+else
+		{
+			//Combo de Informe de avance
+			$informeavance = new InformeAvance();
+			$informeavances = $informeavance->find('list', array(
+					'fields' => array('InformeAvance.id', 'InformeAvance.fecha_fin_etapa')
+			));
+			$this->set('informeavances', $informeavances);
+
+			}
+			
 		if (!$this->request->data) {
 			$this->request->data = $desvio;
-		}
-	}
+		}}
+	
 	
 	public function delete($id) {
 		if ($this->request->is('get')) {

@@ -8,7 +8,10 @@
 		<th>Nombre</th>
 		<th>Ruta</th>
 		<th>Tipo</th>
-        <th>Accion</th>
+		<th>Acta Acuerdo</th>
+		<th>Convenio Marco</th>
+		<th>Convenio Especifico</th>
+		<th>Accion</th>
 	</tr>
 	<!-- Here is where we loop through our $directors array, printing out post info -->
 	<?php foreach ($archivoconvenios as $archivoconvenio): ?>
@@ -23,6 +26,16 @@
 		<td>
 		<?php echo $this->Html->link($archivoconvenio['ArchivoConvenio']['tipo'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
 		</td>
+		<td>
+		<?php echo $this->Html->link($archivoconvenio['ActaAcuerdo']['fecha_creacion'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($archivoconvenio['ConvenioMarco']['fecha_creacion'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($archivoconvenio['ConvenioEspecifico']['fecha_firma'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
+		</td>
+		
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $archivoconvenio['ArchivoConvenio']['id']),

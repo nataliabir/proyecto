@@ -1,4 +1,8 @@
 <?php
+App::import('Model', 'Provincia');
+App::import('Model', 'Comitente');
+App::import('Model', 'Ciudad');
+
 class ContactosController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,6 +32,34 @@ class ContactosController extends AppController {
 				$this->Session->setFlash('El Contacto no pudo ser grabado');
 			}
 		}
+else
+		{
+			//Combo de Provincias
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+
+//Combo de Ciudad
+			$ciudad = new Ciudad();
+			$ciudads = $ciudad->find('list', array(
+					'fields' => array('Ciudad.id', 'Ciudad.nombre')
+			));
+			$this->set('ciudads', $ciudads);
+
+
+//Combo de Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
+
+
+
+
+}
 	}
 	
 	public function edit($id = null) {
@@ -49,6 +81,31 @@ class ContactosController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+
+else
+		{
+			//Combo de Provincias
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+
+//Combo de Ciudad
+			$ciudad = new Ciudad();
+			$ciudads = $ciudad->find('list', array(
+					'fields' => array('Ciudad.id', 'Ciudad.nombre')
+			));
+			$this->set('ciudads', $ciudads);
+
+
+//Combo de Comitente
+			$comitente = new Comitente();
+			$comitentes = $comitente->find('list', array(
+					'fields' => array('Comitente.id', 'Comitente.nombre')
+			));
+			$this->set('comitentes', $comitentes);
+}
 	
 		if (!$this->request->data) {
 			$this->request->data = $contacto;

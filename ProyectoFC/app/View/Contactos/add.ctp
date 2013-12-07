@@ -9,8 +9,24 @@
 	echo $this->Form->input('domicilio');
 	echo $this->Form->input('telefono');
 	echo $this->Form->input('observaciones');
-	echo $this->Form->input('comitente_id');
-	echo $this->Form->input('ciudad_id');
-	echo $this->Form->input('provincia_id');
+
+     echo $this->Form->input('comitente_id', array(
+    'type'    => 'select',
+    'options' => $comitentes,
+    'empty'   => false
+	));
+	
+	echo $this->Form->input('ciudad_id', array(
+    'type'    => 'select',
+    'options' => $ciudads,
+    'empty'   => false
+	));
+
+    echo $this->Form->input('provincia_id', array(
+    'type'    => 'select',
+    'options' => $provincias,
+    'empty'   => false
+	));
+
 	echo $this->Form->end('Guardar Contacto');
 ?>

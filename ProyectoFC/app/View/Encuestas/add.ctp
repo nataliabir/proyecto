@@ -20,6 +20,10 @@
 	echo $this->Form->input('satisfaccion_expectativa');
 	echo $this->Form->input('evaluacion_general');
 	echo $this->Form->input('observaciones');
-	echo $this->Form->input('proyecto_id');
+	echo $this->Form->input('proyecto_id', array(
+    'type'    => 'select',
+    'options' => $proyectos,
+    'empty'   => false
+	));
 	echo $this->Form->end('Guardar Encuesta');
 ?>

@@ -16,7 +16,7 @@
 		<td>
 		<?php echo $this->Html->link($grupo['Grupo']['nombre'], array('controller' => 'grupos', 'action' => 'view', $grupo['Grupo']['id'])); ?>
 		</td>
-		<td><?php echo $grupo['Grupo']['departamento_id']; ?></td>
+		<td><?php echo $grupo['Departamento']['nombre']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $grupo['Grupo']['id']),

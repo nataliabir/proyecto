@@ -1,7 +1,7 @@
 <!-- File: /app/View/Cierres/index.ctp -->
 <h1>Cierre</h1>
 <table>
-	<?php echo $this->Html->link('Agregar Ciere', array('controller' => 'cierres', 'action' => 'add')); ?>
+	<?php echo $this->Html->link('Agregar Cierre', array('controller' => 'cierres', 'action' => 'add')); ?>
 	
 	<tr>
 		<th>Id</th>
@@ -22,10 +22,10 @@
 		<?php echo $this->Html->link($cierre['Cierre']['fecha_reporte'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($cierre['Cierre']['proyecto_id'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
+		<?php echo $this->Html->link($cierre['Proyecto']['nombre'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
 		</td>
         <td>
-		<?php echo $this->Html->link($cierre['Cierre']['motivo_cierre_id'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
+		<?php echo $this->Html->link($cierre['MotivoCierre']['nombre'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
