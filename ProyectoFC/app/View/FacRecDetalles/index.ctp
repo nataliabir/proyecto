@@ -22,7 +22,7 @@
 		<td><?php echo $facrecdetalle['FacRecDetalle']['cantidad']; ?></td>
 		<td><?php echo $facrecdetalle['FacRecDetalle']['monto']; ?></td>
 		<td><?php echo $facrecdetalle['FacRecDetalle']['rubro_id']; ?></td>
-		<td><?php echo $facrecdetalle['FacRecDetalle']['factura_recibida_id']; ?></td>
+		<td><?php echo $facrecdetalle['FacturaRecibida']['nro_factura']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $facrecdetalle['FacRecDetalle']['id']),

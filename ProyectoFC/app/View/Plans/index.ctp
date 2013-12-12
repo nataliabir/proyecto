@@ -5,6 +5,7 @@
 	
 	<tr>
 		<th>Id</th>
+		<th>Nombre</th>
 		<th>Fecha Inicio</th>
 		<th>Fecha Fin</th>
 		<th>Presupuesto</th>
@@ -17,19 +18,15 @@
 	<tr>
 		<td><?php echo $plan['Plan']['id']; ?></td>
 		<td>
-		<?php echo $this->Html->link($plan['Plan']['fecha_ini_prob'], array('controller' => 'plans', 'action' => 'view', $plan['Plan']['id'])); ?>
+		<?php echo $this->Html->link($plan['Plan']['nombre'], array('controller' => 'plans', 'action' => 'view', $plan['Plan']['id'])); ?>
 		</td>
-		<td>
-		<?php echo $this->Html->link($plan['Plan']['fecha_fin_prob'], array('controller' => 'plans', 'action' => 'view', $plan['Plan']['id'])); ?>
-		</td>
+		
+		<td><?php echo $plan['Plan']['fecha_ini_prob']; ?>		</td>
+		<td> <?php echo $plan['Plan']['fecha_fin_prob']; ?> 		</td>
 
-		<td>
-		<?php echo $this->Html->link($plan['Plan']['presupuesto_planif'], array('controller' => 'plans', 'action' => 'view', $plan['Plan']['id'])); ?>
-		</td>
+		<td> <?php echo $plan['Plan']['presupuesto_planif']; ?> 		</td>
 
-		<td>
-		<?php echo $this->Html->link($plan['Plan']['proyecto_id'], array('controller' => 'plans', 'action' => 'view', $plan['Plan']['id'])); ?>
-		</td>
+		<td> <?php echo $plan['Proyecto']['nombre']; ?> 		</td>
 		<td>
 		
 		<?php echo $this->Form->postLink('Delete',

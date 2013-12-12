@@ -26,39 +26,16 @@
 		<td>
 		<?php echo $this->Html->link($persona['Persona']['dni'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
 		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['nombre'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['apellido'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['direccion'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['email'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['telefono'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['cuit'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['especialidad'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['titulo'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['ciudad_id'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($persona['Persona']['provincia_id'], array('controller' => 'personas', 'action' => 'view', $persona['Persona']['id'])); ?>
-		</td>
-
-
-	
+		<td> <?php echo $persona['Persona']['nombre']; ?>		</td>
+		<td> <?php echo $persona['Persona']['apellido']; ?> 		</td>
+		<td> <?php echo $persona['Persona']['direccion']; ?> 		</td>
+		<td> <?php echo $persona['Persona']['email']; ?> 		</td>
+		<td> <?php echo $persona['Persona']['telefono']; ?> 		</td>
+		<td> <?php echo $persona['Persona']['cuit']; ?> 		</td>
+		<td> <?php echo $persona['Persona']['especialidad']; ?> 		</td>
+		<td> <?php echo $persona['Persona']['titulo']; ?> 		</td>
+		<td> <?php echo $persona['Ciudad']['nombre']; ?> 		</td>
+		<td> <?php echo $persona['Provincia']['nombre']; ?> 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $persona['Persona']['id']),

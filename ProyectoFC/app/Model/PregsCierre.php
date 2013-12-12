@@ -8,7 +8,7 @@ class PregsCierre extends AppModel {
 	  		'pregunta_id' => array('rule' => 'notEmpty'));
 	
 	// RELACION PREGS_CIERRE:CIERRE 1:1
-	var $belognsTo = array(
+	var $belongsTo = array(
 			'Cierre' => array(
 					'className'     => 'Cierre',
 					'foreignKey'    => 'cierre_id',

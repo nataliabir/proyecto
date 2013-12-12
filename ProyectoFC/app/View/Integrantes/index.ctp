@@ -5,12 +5,12 @@
 	
 	<tr>
 		<th>Id</th>
+		<th>Persona</th>
 		<th>Dedicacion</th>
 		<th>Pago Mensual</th>
 		<th>Valor Seguro</th>
 		<th>Fecha Inicial</th>
 		<th>Fecha Final</th>
-		<th>Persona</th>
 		<th>Categoria Persona</th>
 		<th>Rol</th>
 		<th>Tipo Pago</th>
@@ -21,14 +21,14 @@
 	<tr>
 		<td><?php echo $integrante['Integrante']['id']; ?></td>
 		<td>
-		<?php echo $this->Html->link($integrante['Integrante']['persona_id'], array('controller' => 'integrantes', 'action' => 'view', $integrante['Integrante']['id'])); ?>
+		<?php echo $this->Html->link($integrante['Persona']['apellido'], array('controller' => 'integrantes', 'action' => 'view', $integrante['Integrante']['id'])); ?>
 		</td>
 		<td><?php echo $integrante['Integrante']['dedicacion']; ?></td>
 		<td><?php echo $integrante['Integrante']['pago_mensual']; ?></td>
 		<td><?php echo $integrante['Integrante']['valor_seguro']; ?></td>
 		<td><?php echo $integrante['Integrante']['fecha_ini']; ?></td>
 		<td><?php echo $integrante['Integrante']['fecha_fin']; ?></td>
-		<td><?php echo $integrante['Integrante']['categoria_persona_id']; ?></td>
+		<td><?php echo $integrante['CategoriaPersona']['nombre']; ?></td>
 		<td><?php echo $integrante['Rol']['descripcion']; ?></td>
 		<td><?php echo $integrante['TipoPago']['descripcion']; ?></td>
 		<td>

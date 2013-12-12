@@ -22,36 +22,17 @@
 	<?php foreach ($comitentes as $comitente): ?>
 	<tr>
 		<td><?php echo $comitente['Comitente']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['nombre'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
+		<td> <?php echo $this->Html->link($comitente['Comitente']['nombre'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
 		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['responsable'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['cuit'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['email'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['pag_web'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['telefono'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['Ciudad']['nombre'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['provincia_id'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['CategoriaIva']['descripcion'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($comitente['TipoComitente']['nombre'], array('controller' => 'comitentes', 'action' => 'view', $comitente['Comitente']['id'])); ?>
-		</td>
+		<td> <?php echo $comitente['Comitente']['responsable']; ?> 	</td>
+		<td> <?php echo $comitente['Comitente']['cuit']; ?> 	</td>
+		<td> <?php echo $comitente['Comitente']['email']; ?> 	</td>
+		<td> <?php echo $comitente['Comitente']['pag_web']; ?> 	</td>
+		<td> <?php echo $comitente['Comitente']['telefono']; ?> 	</td>
+		<td> <?php echo $comitente['Ciudad']['nombre']; ?> 		</td>
+		<td> <?php echo $comitente['Provincia']['nombre']; ?> 	</td>
+		<td> <?php echo $comitente['CategoriaIva']['descripcion']; ?> 		</td>
+		<td> <?php echo $comitente['TipoComitente']['nombre']; ?> 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $comitente['Comitente']['id']),

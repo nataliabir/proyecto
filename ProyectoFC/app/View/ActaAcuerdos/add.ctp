@@ -4,6 +4,7 @@
 
 <?php
 	echo $this->Form->create('ActaAcuerdo');
+	echo $this->Form->input('codigo');
 	echo $this->Form->input('fecha_creacion');
 	echo $this->Form->input('fecha_devolucion');
 	echo $this->Form->input('firm_utn_nombre');

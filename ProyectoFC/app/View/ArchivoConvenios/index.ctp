@@ -17,24 +17,12 @@
 	<?php foreach ($archivoconvenios as $archivoconvenio): ?>
 	<tr>
 		<td><?php echo $archivoconvenio['ArchivoConvenio']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($archivoconvenio['ArchivoConvenio']['nombre'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($archivoconvenio['ArchivoConvenio']['ruta'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($archivoconvenio['ArchivoConvenio']['tipo'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($archivoconvenio['ActaAcuerdo']['fecha_creacion'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($archivoconvenio['ConvenioMarco']['fecha_creacion'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($archivoconvenio['ConvenioEspecifico']['fecha_firma'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?>
-		</td>
+		<td> <?php echo $this->Html->link($archivoconvenio['ArchivoConvenio']['nombre'], array('controller' => 'archivoconvenios', 'action' => 'view', $archivoconvenio['ArchivoConvenio']['id'])); ?> 	</td>
+		<td> <?php echo $archivoconvenio['ArchivoConvenio']['ruta']; ?>	</td>
+		<td> <?php echo $archivoconvenio['ArchivoConvenio']['tipo']; ?> </td>
+		<td> <?php echo $archivoconvenio['ActaAcuerdo']['codigo']; ?></td>
+		<td> <?php echo $archivoconvenio['ConvenioMarco']['codigo']; ?>	</td>
+		<td> <?php echo $archivoconvenio['ConvenioEspecifico']['codigo']; ?></td>
 		
 		<td>
 		<?php echo $this->Form->postLink('Delete',

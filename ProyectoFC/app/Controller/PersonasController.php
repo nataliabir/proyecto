@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'Provincia');
+App::import('Model', 'Ciudad');
+
 class PersonasController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,6 +31,25 @@ class PersonasController extends AppController {
 				$this->Session->setFlash('La Persona no pudo ser grabado');
 			}
 		}
+		else
+		{
+				
+			//Combo de Provincia
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+		
+			//Combo de Ciudad
+			$ciudad = new Ciudad();
+			$ciudads = $ciudad->find('list', array(
+					'fields' => array('Ciudad.id', 'Ciudad.nombre')
+			));
+			$this->set('ciudads', $ciudads);
+		
+		
+		}
 	}
 	
 	public function edit($id = null) {
@@ -49,6 +71,27 @@ class PersonasController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+		else
+		{
+			
+			//Combo de Provincia
+			$provincia = new Provincia();
+			$provincias = $provincia->find('list', array(
+					'fields' => array('Provincia.id', 'Provincia.nombre')
+			));
+			$this->set('provincias', $provincias);
+		
+			//Combo de Ciudad
+			$ciudad = new Ciudad();
+			$ciudads = $ciudad->find('list', array(
+					'fields' => array('Ciudad.id', 'Ciudad.nombre')
+			));
+			$this->set('ciudads', $ciudads);
+		
+		
+		}
+		
+		
 	
 		if (!$this->request->data) {
 			$this->request->data = $persona;

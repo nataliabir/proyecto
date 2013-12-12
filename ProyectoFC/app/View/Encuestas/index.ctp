@@ -46,7 +46,7 @@
 		<td><?php echo $encuesta['Encuesta']['satisfaccion_expectativa']; ?></td>
 		<td><?php echo $encuesta['Encuesta']['evaluacion_gral']; ?></td>
 		<td><?php echo $encuesta['Encuesta']['observaciones']; ?></td>
-		<td><?php echo $encuesta['Encuesta']['proyecto_id']; ?></td>
+		<td><?php echo $encuesta['Proyecto']['nombre']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $encuesta['Encuesta']['id']),

@@ -14,11 +14,12 @@
 	<?php foreach ($etapas as $etapa): ?>
 	<tr>
 		<td><?php echo $etapa['Etapa']['id']; ?></td>
-		<td><?php echo $etapa['Etapa']['codigo']; ?></td>
 		<td>
-		<?php echo $this->Html->link($etapa['Etapa']['nombre'], array('controller' => 'etapas', 'action' => 'view', $etapa['Etapa']['id'])); ?>
+		<?php echo $this->Html->link($etapa['Etapa']['codigo'], array('controller' => 'etapas', 'action' => 'view', $etapa['Etapa']['id'])); ?>
 		</td>
-		<td><?php echo $etapa['Etapa']['plan_id']; ?></td>
+		<td><?php echo $etapa['Etapa']['nombre']; ?></td>
+		
+		<td><?php echo $etapa['Plan']['nombre']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $etapa['Etapa']['id']),

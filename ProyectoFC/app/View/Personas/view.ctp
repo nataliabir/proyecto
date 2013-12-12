@@ -10,5 +10,5 @@
 <p><?php echo h($persona['Persona']['cuit']); ?></p>
 <p><?php echo h($persona['Persona']['especialidad']); ?></p>
 <p><?php echo h($persona['Persona']['titulo']); ?></p>
-<p><?php echo h($persona['Persona']['ciudad_id']); ?></p>
-<p><?php echo h($persona['Persona']['provincia_id']); ?></p>
+<p><?php echo h($persona['Ciudad']['nombre']); ?></p>
+<p><?php echo h($persona['Provincia']['nombre']); ?></p>

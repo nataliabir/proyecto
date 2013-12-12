@@ -3,6 +3,7 @@
 <h1>Edit Convenio Especifico</h1>
 <?php
     echo $this->Form->create('ConvenioEspecifico');
+    echo $this->Form->input('codigo');
     echo $this->Form->input('fecha_devolucion');
 	echo $this->Form->input('responsable_utn');
 	echo $this->Form->input('responsable_comit');

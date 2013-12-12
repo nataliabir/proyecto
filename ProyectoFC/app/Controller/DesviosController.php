@@ -35,7 +35,7 @@ else
 			//Combo de Informe de Avance
 			$informeavance = new InformeAvance();
 			$informeavances = $informeavance->find('list', array(
-					'fields' => array('InformeAvance.id', 'InformeAvance.fecha_fin_etapa')
+					'fields' => array('InformeAvance.id', 'InformeAvance.nombre')
 			));
 			$this->set('informeavances', $informeavances);
 
@@ -66,7 +66,7 @@ else
 			//Combo de Informe de avance
 			$informeavance = new InformeAvance();
 			$informeavances = $informeavance->find('list', array(
-					'fields' => array('InformeAvance.id', 'InformeAvance.fecha_fin_etapa')
+					'fields' => array('InformeAvance.id', 'InformeAvance.nombre')
 			));
 			$this->set('informeavances', $informeavances);
 

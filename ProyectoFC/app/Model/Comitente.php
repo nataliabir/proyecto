@@ -23,6 +23,11 @@ class Comitente extends AppModel {
     				'className'     => 'TipoComitente',
     				'foreignKey'    => 'tipo_comitente_id',
     		),
+    // RELACION COMITENTE:CIUDAD 1:1
+    				'Provincia' => array(
+    						'className'     => 'Provincia',
+    						'foreignKey'    => 'provincia_id',
+    				),
     );
     
     //-----------------------------------------------------------------------

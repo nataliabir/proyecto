@@ -8,7 +8,7 @@
 <p><?php echo h($comitente['Comitente']['pag_web']); ?></p>
 <p><?php echo h($comitente['Comitente']['telefono']); ?></p>
 <p><?php echo h($comitente['Ciudad']['nombre']); ?></p>
-<p><?php echo h($comitente['Comitente']['provincia_id']); ?></p>
+<p><?php echo h($comitente['Provincia']['nombre']); ?></p>
 <p><?php echo h($comitente['CategoriaIva']['descripcion']); ?></p>
 <p><?php echo h($comitente['TipoComitente']['nombre']); ?></p>
 

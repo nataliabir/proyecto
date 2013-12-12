@@ -23,9 +23,9 @@
 		</td>
 		<td><?php echo $this->Html->link($pregcierre['PregCierre']['ponderacion'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>
 		</td>
-		<td><?php echo $this->Html->link($pregcierre['PregCierre']['cierre_id'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>	
+		<td><?php echo $this->Html->link($pregcierre['Cierre']['observaciones'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>	
 		</td>
-        <td><?php echo $this->Html->link($pregcierre['PregCierre']['pregunta_id'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>
+        <td><?php echo $this->Html->link($pregcierre['Pregunta']['nombre'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>
         </td>
 
 		<td>

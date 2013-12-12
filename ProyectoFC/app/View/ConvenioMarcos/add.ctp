@@ -4,6 +4,7 @@
 
 <?php
 	echo $this->Form->create('ConvenioMarco');
+	echo $this->Form->input('codigo');
 	echo $this->Form->input('fecha_creacion');
 	echo $this->Form->input('fecha_firma');
 	echo $this->Form->input('fecha_fin');

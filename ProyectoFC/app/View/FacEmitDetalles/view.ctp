@@ -5,5 +5,5 @@
 <p><?php echo h($facemitdetalle['FacEmitDetalle']['cantidad']);?></p> 
 <p><?php echo h($facemitdetalle['FacEmitDetalle']['monto']);?></p> 
 <p><?php echo h($facemitdetalle['FacEmitDetalle']['rubro_id']);?></p> 
-<p><?php echo h($facemitdetalle['FacEmitDetalle']['factura_emitida_id']);?></p> 
+<p><?php echo h($facemitdetalle['FacturaEmitida']['nro_factura']);?></p> 
 

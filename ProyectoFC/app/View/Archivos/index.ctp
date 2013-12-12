@@ -15,18 +15,11 @@
 	<?php foreach ($archivos as $archivo): ?>
 	<tr>
 		<td><?php echo $archivo['Archivo']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($archivo['Archivo']['nombre'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
+		<td> <?php echo $this->Html->link($archivo['Archivo']['nombre'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
 		</td>
-		<td>
-		<?php echo $this->Html->link($archivo['Archivo']['ruta'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($archivo['Archivo']['tipo'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($archivo['Proyecto']['nombre'], array('controller' => 'archivos', 'action' => 'view', $archivo['Archivo']['id'])); ?>
-		</td>
+		<td> <?php echo $archivo['Archivo']['ruta']; ?>	</td>
+		<td> <?php echo $archivo['Archivo']['tipo']; ?> </td>
+		<td> <?php echo $archivo['Proyecto']['nombre']; ?> </td>
 		<td>
 		
 		<?php echo $this->Form->postLink('Delete',

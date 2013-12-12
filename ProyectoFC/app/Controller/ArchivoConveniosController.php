@@ -37,21 +37,21 @@ class ArchivoConveniosController extends AppController {
 	//Combo de Acta Acuerdo
 	$actaacuerdo = new ActaAcuerdo();
 	$actaacuerdos = $actaacuerdo->find('list', array(
-			'fields' => array('ActaAcuerdo.id', 'ActaAcuerdo.fecha_creacion')
+			'fields' => array('ActaAcuerdo.id', 'ActaAcuerdo.codigo')
 	));
 	$this->set('actaacuerdos', $actaacuerdos);
 	
 	//Combo de Convenio Marco
 	$conveniomarco = new conveniomarco();
 	$conveniomarcos = $conveniomarco->find('list', array(
-			'fields' => array('ConvenioMarco.id', 'ConvenioMarco.fecha_creacion')
+			'fields' => array('ConvenioMarco.id', 'ConvenioMarco.codigo')
 	));
 	$this->set('conveniomarcos', $conveniomarcos);
 	
 	//Combo de Convenio Especifico
 	$convenioespecifico = new convenioespecifico();
 	$convenioespecificos = $convenioespecifico->find('list', array(
-			'fields' => array('ConvenioEspecifico.id', 'ConvenioEspecifico.fecha_firma')
+			'fields' => array('ConvenioEspecifico.id', 'ConvenioEspecifico.codigo')
 	));
 	$this->set('convenioespecificos', $convenioespecificos);
 					
@@ -88,14 +88,14 @@ else
 	//Combo de Convenio Marco
 	$conveniomarco = new conveniomarco();
 	$conveniomarcos = $conveniomarco->find('list', array(
-			'fields' => array('ConvenioMarco.id', 'ConvenioMarco.fecha_creacion')
+			'fields' => array('ConvenioMarco.id', 'ConvenioMarco.codigo')
 	));
 	$this->set('conveniomarcos', $conveniomarcos);
 	
 	//Combo de Convenio Especifico
 	$convenioespecifico = new convenioespecifico();
 	$convenioespecificos = $convenioespecifico->find('list', array(
-			'fields' => array('ConvenioEspecifico.id', 'ConvenioEspecifico.fecha_firma')
+			'fields' => array('ConvenioEspecifico.id', 'ConvenioEspecifico.codigo')
 	));
 	$this->set('convenioespecificos', $convenioespecificos);
 

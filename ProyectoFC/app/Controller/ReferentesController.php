@@ -29,8 +29,18 @@ class ReferentesController extends AppController {
 				$this->Session->setFlash('El Referente no pudo ser grabado');
 			}
 		}
-	}
+		else
+		{
+		
+			//Combo de Comitente
+			$comitente = new Comitente();
+				$comitentes = $comitente->find('list', array(
+			'fields' => array('Comitente.id', 'Comitente.nombre')
+				));
+				$this->set('comitentes', $comitentes);
 	
+	}
+	}
 	public function edit($id = null) {
 		if (!$id) {
 			throw new NotFoundException(__('Referente no encontrado'));
@@ -50,7 +60,18 @@ class ReferentesController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+		else
+		{
+		
+			//Combo de Comitente
+			$comitente = new Comitente();
+				$comitentes = $comitente->find('list', array(
+			'fields' => array('Comitente.id', 'Comitente.nombre')
+				));
+				$this->set('comitentes', $comitentes);
 	
+			
+		}
 		if (!$this->request->data) {
 			$this->request->data = $referente;
 		}

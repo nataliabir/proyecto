@@ -5,6 +5,7 @@
 	
 	<tr>
 		<th>Id</th>
+		<th>Codigo</th>
 		<th>Fecha Creacion</th>
 		<th>Fecha Firma</th>
 		<th>Fecha Fin</th>
@@ -26,48 +27,21 @@
 	<?php foreach ($conveniomarcos as $conveniomarco): ?>
 	<tr>
 		<td><?php echo $conveniomarco['ConvenioMarco']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['fecha_creacion'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['fecha_firma'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['fecha_fin'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['fecha_devolucion'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['firm_utn_nombre'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['firm_utn_cargo'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['firm_comit_nombre'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['firm_comit_cargo'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['objetivo'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['duracion'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['observaciones'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['estado'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['comitente_id'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($conveniomarco['ConvenioMarco']['entidad_firmante_id'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>
-		</td>
+		<td><?php echo $this->Html->link($conveniomarco['ConvenioMarco']['codigo'], array('controller' => 'conveniomarcos', 'action' => 'view', $conveniomarco['ConvenioMarco']['id'])); ?>		</td>
+		<td><?php echo $conveniomarco['ConvenioMarco']['fecha_creacion']; ?>		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['fecha_firma']; ?>		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['fecha_fin']; ?> 	</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['fecha_devolucion']; ?> 		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['firm_utn_nombre']; ?> 		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['firm_utn_cargo']; ?> 		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['firm_comit_nombre']; ?> 		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['firm_comit_cargo']; ?> 		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['objetivo']; ?> 		</td>
+		<td><?php echo $conveniomarco['ConvenioMarco']['duracion']; ?>		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['observaciones']; ?> 		</td>
+		<td> <?php echo $conveniomarco['ConvenioMarco']['estado']; ?> 		</td>
+		<td> <?php echo $conveniomarco['Comitente']['nombre']; ?> 		</td>
+		<td> <?php echo $conveniomarco['EntidadFirmante']['nombre']; ?> 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $conveniomarco['ConvenioMarco']['id']),

@@ -36,7 +36,7 @@ else
 			//Combo de Plan
 			$plan = new Plan();
 			$plans = $plan->find('list', array(
-					'fields' => array('Plan.id', 'Plan.fecha_ini_prob')
+					'fields' => array('Plan.id', 'nombre')
 			));
 			$this->set('plans', $plans);
 
@@ -68,7 +68,7 @@ else
 			//Combo de Plan
 			$plan = new Plan();
 			$plans = $plan->find('list', array(
-					'fields' => array('Plan.id', 'Plan.fecha_ini_prob')
+					'fields' => array('Plan.id', 'Plan.nombre')
 			));
 			$this->set('plans', $plans);
 

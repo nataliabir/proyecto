@@ -11,7 +11,7 @@ class ConvenioEspecifico extends AppModel {
   		    'proyecto_id' => array('rule' => 'notEmpty')); 
 
     // RELACION CONVENIOESPECIFICO:DEPARTAMENTO 1:N 
-    var $belognsTo = array( 
+    var $belongsTo = array( 
             'Departamento' => array( 
                     'className'     => 'Departamento', 
                     'foreignKey'    => 'departamento_id', 

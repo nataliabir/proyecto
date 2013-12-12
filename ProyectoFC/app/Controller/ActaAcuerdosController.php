@@ -48,7 +48,7 @@ class ActaAcuerdosController extends AppController {
 	//Combo de Convenio Marco
 	$conveniomarco = new ConvenioMarco();
 	$conveniomarcos = $conveniomarco->find('list', array(
-			'fields' => array('ConvenioMarco.id',  'ConvenioMarco.fecha_creacion')
+			'fields' => array('ConvenioMarco.id',  'ConvenioMarco.codigo')
 	));
 	$this->set('conveniomarcos', $conveniomarcos);
 	
@@ -123,7 +123,7 @@ else
 	//Combo de Convenio Marco
 	$conveniomarco = new ConvenioMarco();
 	$conveniomarcos = $conveniomarco->find('list', array(
-			'fields' => array('ConvenioMarco.id',  'ConvenioMarco.fecha_creacion')
+			'fields' => array('ConvenioMarco.id',  'ConvenioMarco.codigo')
 	));
 	$this->set('conveniomarcos', $conveniomarcos);
 	

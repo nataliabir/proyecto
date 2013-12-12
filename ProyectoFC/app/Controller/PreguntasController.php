@@ -42,7 +42,7 @@ class PreguntasController extends AppController {
 			throw new NotFoundException(__('Pregunta no encontrado'));
 		}
 	
-		if ($this->request->is('plan') || $this->request->is('put')) {
+		if ($this->request->is('pregunta') || $this->request->is('put')) {
 			$this->Pregunta->id = $id;
 			if ($this->Pregunta->save($this->request->data)) {
 				$this->Session->setFlash('Los datos se actualizaron correctamente');

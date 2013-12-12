@@ -18,16 +18,14 @@
 	<?php foreach ($contactos as $contacto): ?>
 	<tr>
 		<td> <?php echo $contacto['Contacto']['id']; ?></td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['apellido'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['domicilio'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> 	</td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['telefono'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td> <?php echo $this->Html->link($contacto['Contacto']['observaciones'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td>
-		<?php echo $this->Html->link($comitente['Comitente']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?>
-		</td>
-		<td> <?php echo $this->Html->link($contacto['Ciudad']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
-		<td> <?php echo $this->Html->link($contacto['Provincia']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
+		<td> <?php echo $contacto['Contacto']['nombre'], array('controller' => 'contactos', 'action' => 'view', $contacto['Contacto']['id'])); ?> </td>
+		<td> <?php echo $contacto['Contacto']['apellido']; ?> </td>
+		<td> <?php echo $contacto['Contacto']['domicilio']; ?> 	</td>
+		<td> <?php echo $contacto['Contacto']['telefono']; ?> </td>
+		<td> <?php echo $contacto['Contacto']['observaciones']; ?> </td>
+		<td> <?php echo $contacto['Comitente']['nombre']; ?> </td>
+		<td> <?php echo $contacto['Ciudad']['nombre']; ?> </td>
+		<td> <?php echo $contacto['Provincia']['nombre']; ?> </td>
 		
 		<td>
 		<?php echo $this->Form->postLink('Delete',

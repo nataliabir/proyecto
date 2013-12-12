@@ -15,6 +15,13 @@
 		<th>Aval Dpto</th>
 		<th>Aval Admin</th>
 		<th>Aval SEU</th>
+		<th>Categoria</th>
+		<th>Departamento</th>
+		<th>Contacto</th>
+		<th>Director</th>
+		<th>Clasificacion</th>
+		<th>Referente</th>
+		<th>Estado</th>
 		<th>Acciones</th>
 	</tr>
 
@@ -51,6 +58,27 @@
 		</td>
 		<td>
 		<?php echo $this->Html->link($proyecto['Proyecto']['aval_seu'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($proyecto['Categoria']['nombre'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($proyecto['Departamento']['nombre'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($proyecto['Contacto']['nombre'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($proyecto['Director']['descripcion'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($proyecto['Clasificacion']['nombre'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($proyecto['Referente']['nombre'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
+		</td>
+		<td>
+		<?php echo $this->Html->link($proyecto['Estado']['nombre'], array('controller' => 'proyectos', 'action' => 'view', $proyecto['Proyecto']['id'])); ?>
 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',

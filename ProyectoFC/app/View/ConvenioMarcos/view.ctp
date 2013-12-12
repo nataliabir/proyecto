@@ -13,5 +13,5 @@
 <p><?php echo h($conveniomarco['ConvenioMarco']['duracion']); ?></p>
 <p><?php echo h($conveniomarco['ConvenioMarco']['observaciones']); ?></p>
 <p><?php echo h($conveniomarco['ConvenioMarco']['estado']); ?></p>
-<p><?php echo h($conveniomarco['ConvenioMarco']['comitente_id']); ?></p>
-<p><?php echo h($conveniomarco['ConvenioMarco']['entidad_firmante_id']); ?></p>
+<p><?php echo h($conveniomarco['Comitente']['nombre']); ?></p>
+<p><?php echo h($conveniomarco['EntidadFirmante']['nombre']); ?></p>

@@ -22,7 +22,7 @@
 		<td><?php echo $facemitdetalle['FacEmitDetalle']['cantidad']; ?></td>
 		<td><?php echo $facemitdetalle['FacEmitDetalle']['monto']; ?></td>
 		<td><?php echo $facemitdetalle['FacEmitDetalle']['rubro_id']; ?></td>
-		<td><?php echo $facemitdetalle['FacEmitDetalle']['factura_emitida_id']; ?></td>
+		<td><?php echo $facemitdetalle['FacturaEmitida']['nro_factura']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $facemitdetalle['FacEmitDetalle']['id']),

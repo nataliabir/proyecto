@@ -15,18 +15,10 @@
 	<?php foreach ($cierres as $cierre): ?>
 	<tr>
 		<td><?php echo $cierre['Cierre']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($cierre['Cierre']['observaciones'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($cierre['Cierre']['fecha_reporte'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($cierre['Proyecto']['nombre'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
-		</td>
-        <td>
-		<?php echo $this->Html->link($cierre['MotivoCierre']['nombre'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?>
-		</td>
+		<td> <?php echo $this->Html->link($cierre['Cierre']['observaciones'], array('controller' => 'cierres', 'action' => 'view', $cierre['Cierre']['id'])); ?> 	</td>
+		<td> <?php echo $cierre['Cierre']['fecha_reporte']; ?> 	</td>
+		<td> <?php echo $cierre['Proyecto']['nombre']; ?> 	</td>
+        <td> <?php echo $cierre['MotivoCierre']['nombre']; ?> </td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $cierre['Cierre']['id']),

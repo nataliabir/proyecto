@@ -13,15 +13,10 @@
 	<?php foreach ($ciudads as $ciudad): ?>
 	<tr>
 		<td><?php echo $ciudad['Ciudad']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($ciudad['Ciudad']['nombre'], array('controller' => 'ciudads', 'action' => 'view', $ciudad['Ciudad']['id'])); ?>
+		<td> <?php echo $this->Html->link($ciudad['Ciudad']['nombre'], array('controller' => 'ciudads', 'action' => 'view', $ciudad['Ciudad']['id'])); ?>
 		</td>
-		<td>
-		<?php echo $this->Html->link($ciudad['Ciudad']['cp'], array('controller' => 'ciudads', 'action' => 'view', $ciudad['Ciudad']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($ciudad['Provincia']['nombre'], array('controller' => 'ciudads', 'action' => 'view', $ciudad['Ciudad']['id'])); ?>
-		</td>
+		<td> <?php echo $ciudad['Ciudad']['cp']; ?> </td>
+		<td> <?php echo $ciudad['Provincia']['nombre']; ?> 	</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $ciudad['Ciudad']['id']),

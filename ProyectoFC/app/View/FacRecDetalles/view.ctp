@@ -5,4 +5,4 @@
 <p><?php echo h($facrecdetalle['FacRecDetalle']['cantidad']);?></p> 
 <p><?php echo h($facrecdetalle['FacRecDetalle']['monto']);?></p> 
 <p><?php echo h($facrecdetalle['FacRecDetalle']['rubro_id']);?></p> 
-<p><?php echo h($facrecdetalle['FacRecDetalle']['factura_recibida_id']);?></p> 
+<p><?php echo h($facrecdetalle['FacturaRecibida']['nro_factura']);?></p> 

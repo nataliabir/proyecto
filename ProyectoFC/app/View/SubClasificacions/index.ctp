@@ -18,7 +18,7 @@
 		<?php echo $this->Html->link($subclasificacion['SubClasificacion']['nombre'], array('controller' => 'subclasificacions', 'action' => 'view', $subclasificacion['SubClasificacion']['id'])); ?>
 		</td>
 		<td>
-		<?php echo $this->Html->link($subclasificacion['SubClasificacion']['clasificacion_id'], array('controller' => 'subclasificacions', 'action' => 'view', $subclasificacion['SubClasificacion']['id'])); ?>
+		<?php echo $this->Html->link($subclasificacion['Clasificacion']['nombre'], array('controller' => 'subclasificacions', 'action' => 'view', $subclasificacion['SubClasificacion']['id'])); ?>
 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',

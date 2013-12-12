@@ -4,5 +4,6 @@
 <p><?php echo h($facturaemitida['FacturaEmitida']['nro_factura']); ?></p>
 <p><?php echo h($facturaemitida['FacturaEmitida']['nro_sucursal']); ?></p>
 <p><?php echo h($facturaemitida['FacturaEmitida']['fecha']); ?></p>
-<p><?php echo h($facturaemitida['FacturaEmitida']['comitente_id']); ?></p>
-<p><?php echo h($facturaemitida['FacturaEmitida']['tipo_factura_id']); ?></p>
+<p><?php echo h($facturaemitida['Comitente']['nombre']); ?></p>
+<p><?php echo h($facturaemitida['TipoFactura']['nombre']); ?></p>
+

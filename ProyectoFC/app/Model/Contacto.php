@@ -9,7 +9,7 @@ class Contacto extends AppModel {
     		'provinca_id' => array('rule' => 'notEmpty'));    
           
     // RELACION CONTACTO:COMITENTE 1:1
-    var $belogns = array(
+    var $belongsTo = array(
     		'Comitente' => array(
     				'className'     => 'Comitente',
     				'foreignKey'    => 'comitente_id',

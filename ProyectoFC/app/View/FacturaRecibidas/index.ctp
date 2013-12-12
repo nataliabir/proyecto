@@ -21,8 +21,8 @@
 		</td>
 		<td><?php echo $facturarecibida['FacturaRecibida']['nro_sucursal']; ?></td>
 		<td><?php echo $facturarecibida['FacturaRecibida']['fecha']; ?></td>
-		<td><?php echo $facturarecibida['FacturaRecibida']['comitente_id']; ?></td>
-		<td><?php echo $facturarecibida['FacturaRecibida']['tipo_factura_id']; ?></td>
+		<td><?php echo $facturarecibida['Comitente']['nombre']; ?></td>
+		<td><?php echo $facturarecibida['TipoFactura']['nombre']; ?></td>
 		<td>
 		<?php echo $this->Form->postLink('Borrar',
                 array('action' => 'delete', $facturarecibida['FacturaRecibida']['id']),

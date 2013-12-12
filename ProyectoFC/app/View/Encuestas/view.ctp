@@ -17,4 +17,4 @@
 <p><?php echo h($encuesta['Encuesta']['satisfaccion_expectativa']);?></p>
 <p><?php echo h($encuesta['Encuesta']['evaluacion_gral']);?></p>
 <p><?php echo h($encuesta['Encuesta']['observaciones']);?></p>
-<p><?php echo h($encuesta['Encuesta']['proyecto_id']);?></p>
+<p><?php echo h($encuesta['Proyecto']['nombre']);?></p>

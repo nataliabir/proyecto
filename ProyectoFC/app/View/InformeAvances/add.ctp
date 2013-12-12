@@ -4,6 +4,7 @@
 
 <?php
 	echo $this->Form->create('InformeAvance');
+	echo $this->Form->input('nombre');
 	echo $this->Form->input('fecha_fin_etapa');
 	echo $this->Form->input('periodo_reporte_ini');
 	echo $this->Form->input('periodo_reporte_fin');

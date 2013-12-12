@@ -13,6 +13,10 @@ class Persona extends AppModel {
 					'className'     => 'Ciudad',
 					'foreignKey'    => 'ciudad_id',
 							),
+			'Provincia' => array(
+					'className'     => 'Provincia',
+					'foreignKey'    => 'provincia_id',
+			),
 );
 	// RELACION PERSONA:INTEGRANTE 1:1
 	var $hasOne = array(

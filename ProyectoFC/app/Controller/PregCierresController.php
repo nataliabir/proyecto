@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'Pregunta');
+App::import('Model', 'Cierre');
+
 class PregCierresController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,7 +31,27 @@ class PregCierresController extends AppController {
 				$this->Session->setFlash('La Pregunta de cierre no pudo ser grabado');
 			}
 		}
-	}
+		else
+		{
+		
+			//Combo de Cierre
+			$cierre = new Cierre();
+			$cierres = $cierre->find('list', array(
+					'fields' => array('Cierre.id', 'Cierre.observaciones')
+			));
+			$this->set('cierres', $cierres);
+			
+			//Combo de pregunta
+			$pregunta = new Pregunta();
+			$preguntas = $pregunta->find('list', array(
+					'fields' => array('Pregunta.id', 'Pregunta.nombre')
+			));
+			$this->set('preguntas', $preguntas);
+		
+		}
+		
+		}
+	
 	
 	public function edit($id = null) {
 		if (!$id) {
@@ -49,6 +72,27 @@ class PregCierresController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
+		else
+		{
+		
+			//Combo de Cierre
+			$cierre = new Cierre();
+			$cierres = $cierre->find('list', array(
+					'fields' => array('Cierre.id', 'Cierre.observaciones')
+			));
+			$this->set('cierres', $cierres);
+				
+			//Combo de pregunta
+			$pregunta = new Pregunta();
+			$preguntas = $pregunta->find('list', array(
+					'fields' => array('Pregunta.id', 'Pregunta.nombre')
+			));
+			$this->set('preguntas', $preguntas);
+		
+		}
+		
+		
+		
 	
 		if (!$this->request->data) {
 			$this->request->data = $pregcierre;

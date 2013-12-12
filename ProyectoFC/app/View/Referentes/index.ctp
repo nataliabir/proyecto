@@ -17,22 +17,11 @@
 	<?php foreach ($referentes as $referente): ?>
 	<tr>
 		<td><?php echo $referente['Referente']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($referente['Referente']['nombre'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($referente['Referente']['email'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?>
-		</td>
-	<td>
-		<?php echo $this->Html->link($referente['Referente']['telefono'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?>
-		</td>
+		<td> <?php echo $this->Html->link($referente['Referente']['nombre'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?> </td>
+		<td> <?php echo $this->Html->link($referente['Referente']['email'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?> </td>
+	     <td> <?php echo $this->Html->link($referente['Referente']['telefono'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?> </td>
+    	<td> <?php echo $this->Html->link($referente['Comitente']['nombre'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?> </td>
 
-		
-	<td>
-		<?php echo $this->Html->link($referente['Referente']['comitente_id'], array('controller' => 'referentes', 'action' => 'view', $referente['Referente']['id'])); ?>
-		</td>
-
-	
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $referente['Referente']['id']),

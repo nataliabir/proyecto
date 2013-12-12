@@ -17,12 +17,8 @@
 		<td>
 		<?php echo $this->Html->link($desvio['Desvio']['descripcion'], array('controller' => 'desvios', 'action' => 'view', $desvio['Desvio']['id'])); ?>
 		</td>
-		<td>
-		<?php echo $this->Html->link($desvio['Desvio']['analisis'], array('controller' => 'desvios', 'action' => 'view', $desvio['Desvio']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($desvio['Desvio']['informe_avance_id'], array('controller' => 'desvios', 'action' => 'view', $desvio['Desvio']['id'])); ?>
-		</td>
+		<td> <?php echo $desvio['Desvio']['analisis']; ?> 	</td> 	
+		<td> <?php echo $desvio['InformeAvance']['nombre']; ?> 		</td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $desvio['Desvio']['id']),

@@ -3,7 +3,7 @@ class Director extends AppModel {
 	var $name = 'Director';
 	var $validate = array('descripcion' => array('rule' => 'notEmpty'));
     // Relacion Director:Integrante 1:1
-	var $belongsTo = array(
+	var $belognsTo = array(
 			'Integrante' => array(
 					'className'     => 'Integrante',
 					'foreignKey'    => 'integrante_id',

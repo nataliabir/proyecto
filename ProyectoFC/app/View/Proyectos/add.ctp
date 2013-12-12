@@ -12,5 +12,41 @@
 	echo $this->Form->input('aval_dpto');
 	echo $this->Form->input('aval_admin');
 	echo $this->Form->input('aval_seu');
+	
+	echo $this->Form->input('categoria_id', array(
+    'type'    => 'select',
+    'options' => $categorias,
+    'empty'   => false
+	));
+	echo $this->Form->input('departamento_id', array(
+    'type'    => 'select',
+    'options' => $departamentos,
+    'empty'   => false
+	));
+		echo $this->Form->input('contacto_id', array(
+    'type'    => 'select',
+    'options' => $contactos,
+    'empty'   => false
+	));
+	echo $this->Form->input('director_id', array(
+    'type'    => 'select',
+    'options' => $directors,
+    'empty'   => false
+	));
+		echo $this->Form->input('clasificacion_id', array(
+    'type'    => 'select',
+    'options' => $clasificacions,
+    'empty'   => false
+	));
+	echo $this->Form->input('referente_id', array(
+    'type'    => 'select',
+    'options' => $referentes,
+    'empty'   => false
+	));
+	echo $this->Form->input('estado_id', array(
+    'type'    => 'select',
+    'options' => $estados,
+    'empty'   => false
+	));
 	echo $this->Form->end('Guardar Proyecto');
 ?>

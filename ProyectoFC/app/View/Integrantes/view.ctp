@@ -1,6 +1,7 @@
 <!-- File: /app/View/Integrante/view.ctp -->
 
 <h1>Datos del Integrante</h1>
+<p><?php echo h($integrante['Persona']['apellido']); ?></p>
 <p><?php echo h($integrante['Integrante']['dedicacion']); ?></p>
 <p><?php echo h($integrante['Integrante']['pago_mensual']); ?></p>
 <p><?php echo h($integrante['Integrante']['valor_seguro']); ?></p>

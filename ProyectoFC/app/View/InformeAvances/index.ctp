@@ -5,6 +5,7 @@
 	
 	<tr>
 		<th>Id</th>
+		<th>Nombre</th>
 		<th>Fecha Fin Etapa</th>
 		<th>Periodo Reporte Inicio</th>
 		<th>Periodo Reporte Fin</th>
@@ -17,9 +18,9 @@
 	<?php foreach ($informeavances as $informeavance): ?>
 	<tr>
 		<td><?php echo $informeavance['InformeAvance']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($informeavance['InformeAvance']['fecha_fin_etapa'], array('controller' => 'informeavances', 'action' => 'view', $informeavance['InformeAvance']['id'])); ?>
+		<td> <?php echo $this->Html->link($informeavance['InformeAvance']['nombre'], array('controller' => 'informeavances', 'action' => 'view', $informeavance['InformeAvance']['id'])); ?>
 		</td>
+		<td> <?php echo $informeavance['InformeAvance']['fecha_fin_etapa']; ?> 	</td>
 		<td><?php echo $informeavance['InformeAvance']['periodo_reporte_ini']; ?></td>
 		<td><?php echo $informeavance['InformeAvance']['periodo_reporte_fin']; ?></td>
 		<td><?php echo $informeavance['InformeAvance']['desvio']; ?></td>

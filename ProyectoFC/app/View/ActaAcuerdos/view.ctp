@@ -2,6 +2,7 @@
 
 <h1>Acta Acuerdo</h1>
 <p><?php echo h($actaacuerdo['ActaAcuerdo']['id']); ?></p>
+<p><?php echo h($actaacuerdo['ActaAcuerdo']['codigo']); ?></p>
 <p><?php echo h($actaacuerdo['ActaAcuerdo']['fecha_creacion']); ?></p>
 <p><?php echo h($actaacuerdo['ActaAcuerdo']['fecha_devolucion']); ?></p>
 <p><?php echo h($actaacuerdo['ActaAcuerdo']['firm_utn_nombre']); ?></p>
