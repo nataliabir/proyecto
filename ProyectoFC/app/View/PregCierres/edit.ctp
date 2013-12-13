@@ -6,7 +6,7 @@
     echo $this->Form->input('sino');
 	echo $this->Form->input('causa');
 	echo $this->Form->input('ponderacion');
-		echo $this->Form->input('cierre_id', array(
+	echo $this->Form->input('cierre_id', array(
     'type'    => 'select',
     'options' => $cierres,
     'empty'   => false

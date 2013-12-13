@@ -16,18 +16,13 @@
 	<?php foreach ($pregcierres as $pregcierre): ?>
 	<tr>
 		<td><?php echo $pregcierre['PregCierre']['id']; ?>
-		</td>
+		</td> 
 		<td><?php echo $this->Html->link($pregcierre['PregCierre']['sino'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>
 		</td>
-		<td><?php echo $this->Html->link($pregcierre['PregCierre']['causa'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>
-		</td>
-		<td><?php echo $this->Html->link($pregcierre['PregCierre']['ponderacion'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>
-		</td>
-		<td><?php echo $this->Html->link($pregcierre['Cierre']['observaciones'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>	
-		</td>
-        <td><?php echo $this->Html->link($pregcierre['Pregunta']['nombre'], array('controller' => 'pregcierres', 'action' => 'view', $pregcierre['PregCierre']['id'])); ?>
-        </td>
-
+		<td><?php echo $pregcierre['PregCierre']['causa']; ?> </td>
+		<td><?php echo $pregcierre['PregCierre']['ponderacion']; ?> </td>
+		<td><?php echo $pregcierre['Cierre']['observaciones']; ?> 		</td>
+        <td><?php echo $pregcierre['Pregunta']['nombre']; ?>       </td>
 		<td>
 		<?php echo $this->Form->postLink('Delete',
                 array('action' => 'delete', $pregcierre['PregCierre']['id']),

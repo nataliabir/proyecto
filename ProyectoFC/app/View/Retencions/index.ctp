@@ -11,6 +11,7 @@
 		<th>Monto</th>
 		<th>Ente Ejecutor</th>
 		<th>Monto</th>
+		<th>Proyecto</th>
 		<th>Accion</th>
 </tr>
 
@@ -18,24 +19,13 @@
 	<?php foreach ($retencions as $retencion): ?>
 	<tr>
 		<td><?php echo $retencion['Retencion']['id']; ?></td>
-		<td>
-		<?php echo $this->Html->link($retencion['Retencion']['canon_inst'], array('controller' => 'retencions', 'action' => 'view', $retencion['Retencion']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($retencion['Retencion']['canon_inst_monto'], array('controller' => 'retencions', 'action' => 'view', $retencion['Retencion']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($retencion['Retencion']['fondo_reserva'], array('controller' => 'retencions', 'action' => 'view', $retencion['Retencion']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($retencion['Retencion']['fondo_reserva_monto'], array('controller' => 'retencions', 'action' => 'view', $retencion['Retencion']['id'])); ?>
-		</td>
-		<td>
-		<?php echo $this->Html->link($retencion['Retencion']['ente_ejecutor'], array('controller' => 'retencions', 'action' => 'view', $retencion['Retencion']['id'])); ?>
-		</td>
-<td>
-		<?php echo $this->Html->link($retencion['Retencion']['proyecto_id'], array('controller' => 'retencions', 'action' => 'view', $retencion['Retencion']['id'])); ?>
-		</td>
+		<td> <?php echo $retencion['Retencion']['canon_inst']; ?> 	</td>
+		<td> <?php echo $retencion['Retencion']['canon_inst_monto']; ?> </td>
+		<td> <?php echo $retencion['Retencion']['fondo_reserva']; ?> 	</td>
+		<td> <?php echo $retencion['Retencion']['fondo_reserva_monto']; ?> 	</td>
+		<td> <?php echo $retencion['Retencion']['ente_ejecutor']; ?> 	</td>
+        <td> <?php echo $retencion['Retencion']['ente_ejecutor_monto']; ?> 	</td>
+        <td> <?php echo $retencion['Proyecto']['nombre']; ?> 	</td>
 
 		
 	

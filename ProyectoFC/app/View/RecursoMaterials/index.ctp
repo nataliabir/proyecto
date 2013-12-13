@@ -20,11 +20,11 @@
 		</td>
 		<td><?php echo $recursomaterial ['RecursoMaterial']['costo_total']; ?>
 		</td>
-		<td><?php echo $recursomaterial ['RecursoMaterial']['plan_id']; ?>
+		<td><?php echo $recursomaterial ['Plan']['nombre']; ?>
 		</td>
-		<td><?php echo $recursomaterial ['RecursoMaterial']['rubro_id']; ?>
+		<td><?php echo $recursomaterial ['Rubro']['nombre']; ?>
 		</td>
-		<td><?php echo $recursomaterial ['RecursoMaterial']['frecuencia_id']; ?>
+		<td><?php echo $recursomaterial ['Frecuencia']['nombre']; ?>
 		</td>
 	<td>
 	

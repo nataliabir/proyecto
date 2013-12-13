@@ -27,8 +27,20 @@ class RetencionsController extends AppController {
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash('El Retencion no pudo ser grabado');
-			}
+				}
 		}
+		else
+		{
+		
+			//Combo de Proyecto
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+				
+		}
+		
 	}
 	
 	public function edit($id = null) {
@@ -50,7 +62,17 @@ class RetencionsController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+		else
+		{
+		
+			//Combo de Proyecto
+			$proyecto = new Proyecto();
+			$proyectos = $proyecto->find('list', array(
+					'fields' => array('Proyecto.id', 'Proyecto.nombre')
+			));
+			$this->set('proyectos', $proyectos);
+		
+		}
 		if (!$this->request->data) {
 			$this->request->data = $retencion;
 		}

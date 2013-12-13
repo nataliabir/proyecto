@@ -1,4 +1,7 @@
 <?php
+App::import('Model', 'Plan');
+App::import('Model', 'Rubro');
+App::import('Model', 'Frecuencia');
 class RecursoMaterialsController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
@@ -28,6 +31,29 @@ class RecursoMaterialsController extends AppController {
 				$this->Session->setFlash('El Recurso Material no pudo ser grabado');
 			}
 		}
+		else
+		{
+		
+			//Combo de plan
+			$plan = new Plan();
+			$plans = $plan->find('list', array(
+					'fields' => array('Plan.id', 'Plan.nombre')
+			));
+			$this->set('plans', $plans);
+			//Combo de Rubro
+			$rubro = new Rubro();
+			$rubros = $rubro->find('list', array(
+					'fields' => array('Rubro.id', 'Rubro.nombre')
+			));
+			$this->set('rubros', $rubros);
+			//Combo de Frecuencia
+			$frecuencia = new Frecuencia();
+			$frecuencias = $frecuencia->find('list', array(
+					'fields' => array('Frecuencia.id', 'Frecuencia.nombre')
+			));
+			$this->set('frecuencias', $frecuencias);
+		
+	}
 	}
 	
 	public function edit($id = null) {
@@ -49,7 +75,28 @@ class RecursoMaterialsController extends AppController {
 				$this->Session->setFlash('Los datos no fueron actualizados');
 			}
 		}
-	
+		else
+		{
+		
+			//Combo de plan
+			$plan = new Plan();
+			$plans = $plan->find('list', array(
+					'fields' => array('Plan.id', 'Plan.nombre')
+			));
+			$this->set('plans', $plans);
+			//Combo de Rubro
+			$rubro = new Rubro();
+			$rubros = $rubro->find('list', array(
+					'fields' => array('Rubro.id', 'Rubro.nombre')
+			));
+			$this->set('rubros', $rubros);
+			//Combo de Frecuencia
+			$frecuencia = new Frecuencia();
+			$frecuencias = $frecuencia->find('list', array(
+					'fields' => array('Frecuencia.id', 'Frecuencia.nombre')
+			));
+			$this->set('frecuencias', $frecuencias);
+		}	
 		if (!$this->request->data) {
 			$this->request->data = $recursomaterial;
 		}
