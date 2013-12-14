@@ -5,8 +5,8 @@ class Pregunta extends AppModel {
     	
 	// RELACION PREGUNTA: PREGS_CIERRE 1:N
 	var $hasMany = array(
-			'PregsCierre' => array(
-					'className'     => 'PregsCierre',
+			'Pregcierre' => array(
+					'className'     => 'Pregcierre',
 					'foreignKey'    => 'pregunta_id',
 							)
                     	);

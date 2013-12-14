@@ -21,8 +21,8 @@ class Cierre extends AppModel {
     //-----------------------------------------------------------------------
     // RELACION CIERRE:PREGUNTACIERRE 1:N
     var $hasMany = array(
-    		'PregCierre' => array(
-    				'className'     => 'PregCierre',
+    		'Pregcierre' => array(
+    				'className'     => 'Pregcierre',
     				'foreignKey'    => 'cierre_id',
     		)
     	);
