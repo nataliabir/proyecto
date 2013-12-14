@@ -1,6 +1,6 @@
 <?php
-class PregsCierre extends AppModel {
-	  var $name = 'PregsCierre';
+class Pregcierre extends AppModel {
+	  var $name = 'Pregcierre';
 	  var $validate = array('sino' => array('rule' =>'notEmpty'), 
     		'causa' => array('rule' => 'notEmpty'), 
     		'ponderacion' => array('rule' => 'notEmpty'),

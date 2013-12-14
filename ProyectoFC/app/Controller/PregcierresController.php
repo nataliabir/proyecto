@@ -2,29 +2,29 @@
 App::import('Model', 'Pregunta');
 App::import('Model', 'Cierre');
 
-class PregCierresController extends AppController {
+class PregcierresController extends AppController {
 	public $helpers = array('Html', 'Form','Session');
 	public $components =array('Session');
 	
 	public function index() {
-		$this->set('pregcierres', $this->PregCierre->find('all'));
+		$this->set('pregcierres', $this->Pregcierre->find('all'));
 	}
 	
 	public function view($id = null) {
 		if (!$id) {
 			throw new NotFoundException(__('Pregunta Cierre no encontrado'));
 		}
-		$preg_cierre = $this->PregCierre->findById($id);
-		if (!$preg_cierre) {
+		$preg_cierre = $this->Pregcierre->findById($id);
+		if (!$pregcierre) {
 			throw new NotFoundException(__('Pregunta Cierre no encontrado'));
 		}
-			$this->set('pregcierre', $preg_cierre);
+			$this->set('pregcierre', $pregcierre);
 	}
 	
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->PregCierre->create();
-			if ($this->PregCierre->save($this->request->data)) {
+			$this->Pregcierre->create();
+			if ($this->Pregcierre->save($this->request->data)) {
 				$this->Session->setFlash('la Pregunta de cierre se grabó correctamente');
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -58,14 +58,14 @@ class PregCierresController extends AppController {
 			throw new NotFoundException(__('Pregunta de cierre no encontrado'));
 		}
 	
-		$pregcierre = $this->PregCierre->findById($id);
+		$pregcierre = $this->Pregcierre->findById($id);
 		if (!$pregcierre) {
 			throw new NotFoundException(__('Pregunta de Cierre no encontrado'));
 		}
 	
 		if ($this->request->is('pregcierre') || $this->request->is('put')) {
-			$this->PregCierre->id = $id;
-			if ($this->PregCierre->save($this->request->data)) {
+			$this->Pregcierre->id = $id;
+			if ($this->Pregcierre->save($this->request->data)) {
 				$this->Session->setFlash('Los datos se actualizaron correctamente');
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -104,7 +104,7 @@ class PregCierresController extends AppController {
 			throw new MethodNotAllowedException();
 		}
 	
-		if ($this->PregCierre->delete($id)) {
+		if ($this->Pregcierre->delete($id)) {
 			$this->Session->setFlash('La Pregunta de cierre con ID: ' . $id . ' fue borrado');
 			$this->redirect(array('action' => 'index'));
 		}

@@ -1,11 +1,13 @@
-<!-- File: /app/View/PregCierres/edit.ctp -->
+<!-- File: /app/View/Pregcierres/add.ctp -->
 
-<h1>Edit PregCierre</h1>
+<h1>Add Pregunta de Cierre</h1>
+
 <?php
-    echo $this->Form->create('PregCierre');
-    echo $this->Form->input('sino');
+	echo $this->Form->create('Pregcierre');
+	echo $this->Form->input('sino');
 	echo $this->Form->input('causa');
 	echo $this->Form->input('ponderacion');
+	
 	echo $this->Form->input('cierre_id', array(
     'type'    => 'select',
     'options' => $cierres,
@@ -16,8 +18,8 @@
     'options' => $preguntas,
     'empty'   => false
 	));
-
- 	echo $this->Form->input('id', array('type' => 'hidden'));
-    echo $this->Form->end('Guardar PregCierre');
-    
+	echo $this->Form->end('Guardar Pregcierre');
 ?>
+
+
+

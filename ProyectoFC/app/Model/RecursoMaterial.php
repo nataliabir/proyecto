@@ -9,7 +9,7 @@ class RecursoMaterial extends AppModel {
 			'rubro_id' => array('rule' => 'notEmpty'));	
 	
 	// RELACION RECURSOMATERIAL:PLAN 1:1
-	var $belongs = array(
+	var $belongsTo = array(
 			'Plan' => array(
 					'className'     => 'Plan',
 					'foreignKey'    => 'plan_id',
@@ -20,7 +20,7 @@ class RecursoMaterial extends AppModel {
 					'foreignKey'    => 'rubro_id',
 			),
 	// RELACION RECURSOMATERIAL:FRECEUNCIA 1:1
-			'Frencuencia' => array(
+			'Frecuencia' => array(
 					'className'     => 'Frecuencia',
 					'foreignKey'    => 'frecuencia_id',
 			)
